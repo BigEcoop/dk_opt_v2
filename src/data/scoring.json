@@ -1,0 +1,54 @@
+{
+  "site": "DraftKings",
+  "scoring": {
+    "offense": {
+      "passing_td": 4,
+      "interception": -1,
+      "rushing_td": 6,
+      "receiving_td": 6,
+      "reception": 1.0,
+      "fumble_lost": -1,
+      "two_point_conversion": 2,
+      "own_fumble_td": 6
+    },
+    "yardage": {
+      "passing": 0.04,
+      "rushing": 0.1,
+      "receiving": 0.1
+    },
+    "bonuses": {
+      "passing_300_yds": 3,
+      "rushing_100_yds": 3,
+      "receiving_100_yds": 3
+    },
+    "special_teams": {
+      "return_td": 6
+    },
+    "defense": {
+      "sack": 1,
+      "interception": 2,
+      "fumble_recovery": 2,
+      "def_td": 6,
+      "safety": 2,
+      "blocked_kick": 2,
+      "points_allowed": {
+        "0": 10,
+        "1_6": 7,
+        "7_13": 4,
+        "14_20": 1,
+        "21_27": 0,
+        "28_34": -1,
+        "35_plus": -4
+      }
+    }
+  },
+  "salary": {
+    "cap": 50000,
+    "avg_player_cost": 5555,
+    "roster_size": 9
+  },
+  "lineup": {
+    "positions": ["QB", "RB", "RB", "WR", "WR", "WR", "TE", "FLEX", "DST"],
+    "min_games": 2
+  }
+}

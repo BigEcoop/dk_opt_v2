@@ -1,0 +1,121 @@
+{
+  "stack_usage": {
+    "overall_stack_rate": 0.88,
+    "naked_qb_rate": 0.12,
+    "stack_depths": {
+      "single_stack": 0.42,
+      "double_stack": 0.39,
+      "triple+_stack": 0.07
+    },
+    "positions_used": {
+      "wr_in_stack": 0.94,
+      "te_in_stack": 0.53,
+      "rb_in_stack": 0.22
+    },
+    "notes": [
+      "Double stacks frequently combine QB + two WRs, or WR + TE.",
+      "RBs are less commonly included in stacks; usually only high-receiving backs.",
+      "Larger stacks (three teammates) used primarily in projected shootouts."
+    ]
+  },
+  "bringback_usage": {
+    "rate": 0.62,
+    "positions": {
+      "wr": 0.73,
+      "rb": 0.19,
+      "te": 0.08
+    },
+    "notes": [
+      "Bringbacks tilt heavily WR (73%), mirroring slate-breaking WR ceilings.",
+      "RB bringback is highly slate- or matchup-dependent.",
+      "Double bringback is rare, but present in high-total game onslaughts."
+    ]
+  },
+  "naked_qb_rate": 0.12,
+  "flex_position_distribution": {
+    "wr": 0.57,
+    "rb": 0.31,
+    "te": 0.12,
+    "notes": [
+      "Wide receiver is the most common FLEX, notably above 55%.",
+      "RB in FLEX increases in injury/uncertainty slates; TE rarely optimal unless exceptional value.",
+      "Flex slot nearly always used on high-ceiling position based on matchup volatility."
+    ]
+  },
+  "ownership_distribution": {
+    "avg_per_player": 0.156,
+    "owner_bands": {
+      "sub10_percent": 0.32,
+      "10_20_percent": 0.44,
+      "over_25_percent": 0.23
+    },
+    "min_ownership_in_roster": "typically 0.01–0.07",
+    "notes": [
+      "Winning lineups blend 2–3 chalk ('core') plays with 3+ leverage/contrarian options.",
+      "A true single-digit-ownership player ('differentiator') is present in ~89% of winners."
+    ]
+  },
+  "salary_usage": {
+    "avg_salary_spent": 49890,
+    "min_salary_spent": 49400,
+    "full_cap_used": 0.54,
+    "notes": [
+      "Leaving > $1,000 of salary unused nearly eliminates winning odds.",
+      "Most winners stay within $500 of cap, but uniqueness gained by skipping full $50k when possible."
+    ]
+  },
+  "positional_combination": {
+    "default_structure": "2 RB, 3 WR, 1 TE, 1 FLEX, 1 QB, 1 DST",
+    "dst_punt": true,
+    "notes": [
+      "Punters at DST are almost always featured in winning builds.",
+      "TE is more often faded unless punt-priced or stacked."
+    ]
+  },
+  "average_winning_score": {
+    "overall": 230,
+    "2021": 228,
+    "2022": 233,
+    "2023": 234,
+    "2024": 229.5,
+    "high_scoring_weeks": [262.1, 281.7, 263.9]
+  },
+  "contrarian_low_ownership": {
+    "avg_min_ownership_per_roster": 0.06,
+    "contrarian_play_presence": 0.89,
+    "notes": [
+      "Every winner had at least one player <7% owned.",
+      "Leverage mostly found at WR/FLEX and DST; rarely at RB.",
+      "Slate-breaking contrarians outperform projections substantially."
+    ]
+  },
+  "game_onslaughts": {
+    "rate_with_4plus_from_one_game": 0.12,
+    "notes": [
+      "Game onslaughts more viable when mid-priced players and projected shootouts align.",
+      "Double bringbacks or four total players from same game represented a growing trend (esp. 2023–2024)."
+    ]
+  },
+  "dst_strategy": {
+    "low_ownership_dst": true,
+    "paydown_dst": true,
+    "notes": [
+      "Rarely paying up at defense; most use sub-$3,200 options.",
+      "Correlates with negative game scripts for chalk offenses."
+    ]
+  },
+  "salary_points_correlation": {
+    "correlation_strength": "weak-to-moderate",
+    "notes": [
+      "Sharp lineup construction maximizes points while finding value/undervalued breakouts in pricing."
+    ]
+  },
+  "notable_trends_2023_2024": {
+    "late_swap": true,
+    "emphasis_on_uniqueness": true,
+    "notes": [
+      "Winning lineups often benefit from late swaps into lower-owned 'late hammer' games.",
+      "Salary uniqueness (via sub-$50k usage) differentiates as projections get sharper."
+    ]
+  }
+}

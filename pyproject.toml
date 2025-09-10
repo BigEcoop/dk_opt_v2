@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "dk_opt"
+version = "0.1.0"
+description = "DraftKings NFL optimizer"
+authors = ["Elvis <elvis@example.com>"]
+readme = "README.md"
+
+packages = [
+  { include = "optimizer", from = "src" }
+]
+
+# point Poetry to your scoring.json under src/data/
+include = ["data/scoring.json"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+nfl_data_py = "0.3.3"
+pandas = "^1.5.3"
+importlib-resources = "^6.1.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+black = "^24.4.0"
+mypy = "^1.10.0"
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
