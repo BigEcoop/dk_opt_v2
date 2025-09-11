@@ -89,10 +89,10 @@ def get_fanduel_salaries_csv(week: int, year: int) -> pd.DataFrame:
         axis=1
     )
 
-    # extract numeric ID (split on dash if present)
+    # extract numeric ID (split on dash if present), future‐proofed
     df["player_id"] = (
         df["Id"].astype(str)
-          .str.split("-", 1)
+          .str.split(pat="-", n=1)
           .str[-1]
           .astype(int)
     )
