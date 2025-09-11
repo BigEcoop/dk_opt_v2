@@ -5,18 +5,16 @@ import json
 from pathlib import Path
 import pandas as pd
 
-# ── PROJECT ROOT & PATHS ───────────────────────────────────────────────────────
-# __file__ is src/optimizer/engine.py; two levels up to project root
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-SCORING_PATH = PROJECT_ROOT / "src" / "data" / "scoring.json"
-
 
 def load_scoring_config() -> dict:
     """
     Load DraftKings scoring JSON from src/data/scoring.json
     and return the parsed dict.
     """
-    with SCORING_PATH.open("r", encoding="utf-8") as f:
+    # __file__ is src/optimizer/engine.py
+    # Move up two levels to src/, then into data/scoring.json
+    scoring_path = Path(__file__).resolve().parent.parent / "data" / "scoring.json"
+    with scoring_path.open("r", encoding="utf-8") as f:
         return json.load(f)
 
 

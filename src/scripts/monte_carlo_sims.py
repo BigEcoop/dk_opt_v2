@@ -1,14 +1,5 @@
 #!/usr/bin/env python3
-"""
-monte_carlo_sims.py
-
-1) Load week-specific Diehard baselines.
-2) Pull rosters, depth charts, and injury info via nfl_data_py.
-3) Simulate MAIN SLATE (Sunday + Monday games):
-     • produce player_summary.json (fantasy distributions),
-     • produce team_summary.json (realistic game scores).
-4) Write betting.csv/xlsx with realistic game-level scores.
-"""
+# src/scripts/monte_carlo_sims.py
 
 import json
 import random
@@ -20,34 +11,39 @@ import urllib.error
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-# ── CONSTANTS ─────────────────────────────────────────────────────────────────
-OUTPUT_DIR     = Path(__file__).parent.parent / "output"
-PLAYER_SUMMARY = OUTPUT_DIR / "player_summary.json"
-TEAM_SUMMARY   = OUTPUT_DIR / "team_summary.json"
-BETTING_CSV    = OUTPUT_DIR / "betting.csv"
-BETTING_XLSX   = OUTPUT_DIR / "betting.xlsx"
+# ── PROJECT ROOT & PATHS ───────────────────────────────────────────────────────
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-DEF_POSITIONS  = {"CB","DE","DT","LB","PK","TD","S"}
-TEAM_SCALE     = 5.87    # collapse summed stat-line into per-game score
+# raw baselines under src/output/projections/{year}_w{week}/footballguys_base_{year}_w{week}.json
+PROJS_ROOT   = PROJECT_ROOT / "src" / "output" / "projections"
+
+# scoring JSON remains constant at src/data/scoring.json
+SCORING_JSON = PROJECT_ROOT / "src" / "data" / "scoring.json"
+
+# root for simulation outputs
+SIMS_ROOT    = PROJECT_ROOT / "src" / "output" / "sims"
+
+# ── SIM CONSTANTS ───────────────────────────────────────────────────────────────
+DEF_POSITIONS  = {"CB", "DE", "DT", "LB", "PK", "TD", "S"}
+TEAM_SCALE     = 5.87
 ODDS_URL       = "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds"
 DIFF_THRESHOLD = 0.05
 
-# ── TEAM & STAT MAPPINGS ──────────────────────────────────────────────────────
-team_map = {"LA":"LAR","LAR":"LAR","FA":None}
+team_map = {"LA": "LAR", "LAR": "LAR", "FA": None}
 
 key_map = {
-    "pass_att":"pass_attempts","pass_cmp":"pass_completions",
-    "pass_td":"passing_tds","pass_yds":"passing_yds",
-    "pass_int":"interceptions","rush_car":"rushing_attempts",
-    "rush_td":"rushing_tds","rush_yds":"rushing_yds",
-    "rec_tgt":"receiving_targets","rec_rec":"receptions",
-    "rec_td":"receiving_tds","rec_yds":"receiving_yds",
-    "fum_lost":"fumbles","pr_yds":"punt_return_yards",
-    "pr_tds":"punt_return_tds","kr_yds":"kick_return_yds",
-    "kr_tds":"kick_return_tds"
+    "pass_att":  "pass_attempts",    "pass_cmp": "pass_completions",
+    "pass_td":   "passing_tds",      "pass_yds": "passing_yds",
+    "pass_int":  "interceptions",    "rush_car": "rushing_attempts",
+    "rush_td":   "rushing_tds",      "rush_yds": "rushing_yds",
+    "rec_tgt":   "receiving_targets","rec_rec": "receptions",
+    "rec_td":    "receiving_tds",    "rec_yds": "receiving_yds",
+    "fum_lost":  "fumbles",          "pr_yds": "punt_return_yards",
+    "pr_tds":    "punt_return_tds",  "kr_yds": "kick_return_yds",
+    "kr_tds":    "kick_return_tds"
 }
 
-OFFENSE_POSITIONS = {"qb","rb","wr","te"}
+OFFENSE_POSITIONS = {"qb", "rb", "wr", "te"}
 OUTPUT_CATEGORIES  = list(key_map.values())
 
 # ── HELPERS ────────────────────────────────────────────────────────────────────
@@ -69,11 +65,14 @@ def write_csv(path: Path, header: List[str], rows: List[List]):
 def prepare_players(baseline_path: Path, week: int) -> List[Dict]:
     raw = load_json(baseline_path)["players"]
     try:
-        inj_df = nfl.import_injuries([2025])
-    except urllib.error.HTTPError:
-        inj_df = pd.DataFrame(columns=["player_name","injury_status"])
-    injured = set(inj_df[inj_df["injury_status"].isin({"questionable","out","doubtful"})]
-                  ["player_name"])
+        year = int(baseline_path.stem.split("_")[2])
+        inj_df = nfl.import_injuries([year])
+    except (urllib.error.HTTPError, ValueError):
+        inj_df = pd.DataFrame(columns=["player_name", "injury_status"])
+    injured = set(
+        inj_df[inj_df["injury_status"].isin({"questionable", "out", "doubtful"})]
+             ["player_name"]
+    )
 
     players: List[Dict] = []
     for rec in raw:
@@ -92,11 +91,10 @@ def prepare_players(baseline_path: Path, week: int) -> List[Dict]:
         for k, v in rec.items():
             norm = k.strip().lower().replace(" ", "_").replace("-", "_")
             if norm in key_map:
-                std = key_map[norm]
                 try:
-                    stats[std] = float(v)
+                    stats[key_map[norm]] = float(v)
                 except (ValueError, TypeError):
-                    stats[std] = 0.0
+                    stats[key_map[norm]] = 0.0
         if not stats:
             continue
 
@@ -109,76 +107,69 @@ def prepare_players(baseline_path: Path, week: int) -> List[Dict]:
         })
     return players
 
-# ── FANTASY SCORING ─────────────────────────────────────────────────────────────
-def score_statline(statline: Dict[str,float], scoring: Dict) -> float:
+# ── SCORING & SIMULATION ───────────────────────────────────────────────────────
+def score_statline(statline: Dict[str, float], scoring: Dict) -> float:
     o, y, b = scoring["offense"], scoring["yardage"], scoring["bonuses"]
     pts = 0.0
-    pts += statline.get("passing_tds",0)        * o["passing_td"]
-    pts += statline.get("interceptions",0)      * o["interception"]
-    pts += statline.get("passing_yds",0)        * y["passing"]
-    if statline.get("passing_yds",0) >= 300:
+    pts += statline.get("passing_tds", 0)         * o["passing_td"]
+    pts += statline.get("interceptions", 0)       * o["interception"]
+    pts += statline.get("passing_yds", 0)         * y["passing"]
+    if statline.get("passing_yds", 0) >= 300:
         pts += b["passing_300_yds"]
-    pts += statline.get("rushing_tds",0)        * o["rushing_td"]
-    pts += statline.get("rushing_yds",0)        * y["rushing"]
-    if statline.get("rushing_yds",0) >= 100:
+    pts += statline.get("rushing_tds", 0)         * o["rushing_td"]
+    pts += statline.get("rushing_yds", 0)         * y["rushing"]
+    if statline.get("rushing_yds", 0) >= 100:
         pts += b["rushing_100_yds"]
-    pts += statline.get("receiving_tds",0)      * o["receiving_td"]
-    pts += statline.get("receptions",0)         * o["reception"]
-    pts += statline.get("receiving_yds",0)      * y["receiving"]
-    if statline.get("receiving_yds",0) >= 100:
+    pts += statline.get("receiving_tds", 0)       * o["receiving_td"]
+    pts += statline.get("receptions", 0)          * o["reception"]
+    pts += statline.get("receiving_yds", 0)       * y["receiving"]
+    if statline.get("receiving_yds", 0) >= 100:
         pts += b["receiving_100_yds"]
-    pts += statline.get("fumbles",0)            * o["fumble_lost"]
-    pts += statline.get("two_point_conversion",0)* o.get("two_point_conversion",0)
+    pts += statline.get("fumbles", 0)             * o["fumble_lost"]
+    pts += statline.get("two_point_conversion", 0)* o.get("two_point_conversion", 0)
     return pts
 
-# ── REALISTIC TEAM SCORE SIMULATION ────────────────────────────────────────────
-def simulate_team_score(team_stats: Dict[str,float]) -> int:
+def simulate_team_score(team_stats: Dict[str, float]) -> int:
     td_count = (
-        team_stats.get("passing_tds",0) +
-        team_stats.get("rushing_tds",0) +
-        team_stats.get("receiving_tds",0)
+        team_stats.get("passing_tds", 0) +
+        team_stats.get("rushing_tds", 0) +
+        team_stats.get("receiving_tds", 0)
     )
     pts = td_count * 6
-
     pat_successes = sum(1 for _ in range(int(td_count)) if random.random() < 0.95)
     pts += pat_successes
-
-    # simulate 0–4.75 field goal attempts (85% success)
-    fg_attempts = int(random.uniform(0, 4.75))
+    fg_attempts  = int(random.uniform(0, 4.75))
     fg_successes = sum(1 for _ in range(fg_attempts) if random.random() < 0.85)
     pts += fg_successes * 3
-
     if random.random() < 0.03:
         pts += 2  # safety
-
     return pts
 
-# ── SIMULATION & AGGREGATION ────────────────────────────────────────────────────
 def simulate_for(
-    matchups: List[Tuple[str,str]],
-    teams:    Dict[str,List[Dict]],
+    matchups: List[Tuple[str, str]],
+    teams:    Dict[str, List[Dict]],
     scoring:  Dict,
     sims:     int
 ) -> Tuple[
-    Dict[str,Dict[str,List[float]]],
-    Dict[str,Dict[str,List[float]]]
+    Dict[str, Dict[str, List[float]]],
+    Dict[str, Dict[str, List[float]]]
 ]:
     player_agg = {
         p["player"]: {c: [] for c in OUTPUT_CATEGORIES + ["dk_points"]}
         for roster in teams.values() for p in roster
     }
-    team_agg = {t:{"wins":0,"scores":[],"spreads":[]} for t in teams}
+    team_agg = {t: {"wins": 0, "scores": [], "spreads": []} for t in teams}
 
     for away, home in matchups:
         home_roster = teams[home]
         away_roster = teams[away]
 
         for _ in range(sims):
-            def run_lineup(roster: List[Dict]) -> Dict[str,Dict]:
+            def run_lineup(roster):
                 out = {}
                 for p in roster:
                     jitter = {
-                        st: max(0.0, random.gauss(mu, max(mu*0.2,1)))
+                        st: max(0.0, random.gauss(mu, max(mu * 0.2, 1)))
                         for st, mu in p["stats"].items()
                     }
                     dk_pts = score_statline(jitter, scoring)
@@ -188,10 +179,14 @@ def simulate_for(
             h_out = run_lineup(home_roster)
             a_out = run_lineup(away_roster)
 
-            h_stats = {c: sum(info["stats"].get(c,0) for info in h_out.values())
-                       for c in OUTPUT_CATEGORIES}
-            a_stats = {c: sum(info["stats"].get(c,0) for info in a_out.values())
-                       for c in OUTPUT_CATEGORIES}
+            h_stats = {
+                c: sum(info["stats"].get(c, 0) for info in h_out.values())
+                for c in OUTPUT_CATEGORIES
+            }
+            a_stats = {
+                c: sum(info["stats"].get(c, 0) for info in a_out.values())
+                for c in OUTPUT_CATEGORIES
+            }
 
             h_score = simulate_team_score(h_stats)
             a_score = simulate_team_score(a_stats)
@@ -204,7 +199,7 @@ def simulate_for(
                     player_agg[pl][c].append(val)
                 player_agg[pl]["dk_points"].append(info["dk"])
 
-            team_agg[winner]["wins"]    += 1
+            team_agg[winner]["wins"]      += 1
             team_agg[home]["scores"].append(h_score)
             team_agg[away]["scores"].append(a_score)
             team_agg[home]["spreads"].append(spread)
@@ -212,15 +207,15 @@ def simulate_for(
 
     return player_agg, team_agg
 
-# ── SUMMARIES ─────────────────────────────────────────────────────────────────
+# ── SUMMARIES & ENTRYPOINT ─────────────────────────────────────────────────────
 def summarize_players(
-    player_agg: Dict[str,Dict[str,List[float]]],
-    meta:       Dict[str,Dict[str,str]]
-) -> Dict[str,Dict]:
-    summary: Dict[str,Dict] = {}
+    player_agg: Dict[str, Dict[str, List[float]]],
+    meta:       Dict[str, Dict[str, str]]
+) -> Dict[str, Dict]:
+    summary: Dict[str, Dict] = {}
     for pl, stats in player_agg.items():
         m = meta.get(pl, {})
-        rec = {"id":m.get("id",""), "team":m.get("team",""), "pos":m.get("pos","")}
+        rec = {"id": m.get("id", ""), "team": m.get("team", ""), "pos": m.get("pos", "")}
         for c, vals in stats.items():
             if not vals:
                 continue
@@ -229,24 +224,21 @@ def summarize_players(
                 "mean":    statistics.mean(vals),
                 "ceiling": max(vals)
             }
-        # add total_tds = mean rushing_tds + mean receiving_tds
-        rec["total_tds"] = rec.get("rushing_tds",{}).get("mean", 0) \
-                         + rec.get("receiving_tds",{}).get("mean", 0)
+        rec["total_tds"] = (
+            rec.get("rushing_tds", {}).get("mean", 0) +
+            rec.get("receiving_tds", {}).get("mean", 0)
+        )
         summary[pl] = rec
     return summary
 
 def summarize_teams(
-    team_agg: Dict[str,Dict[str,List[float]]],
+    team_agg: Dict[str, Dict[str, List[float]]],
     sims:     int
-) -> Dict[str,Dict]:
-    """
-    Divide total_scores and total_spreads by (sims * TEAM_SCALE)
-    to collapse summed stat-lines into realistic per-game ranges.
-    """
-    summary: Dict[str,Dict] = {}
+) -> Dict[str, Dict]:
+    summary: Dict[str, Dict] = {}
     for t, agg in team_agg.items():
         if not agg["scores"]:
-            summary[t] = {"win_prob":0.0, "mean_score":0.0, "mean_spread":0.0}
+            summary[t] = {"win_prob": 0.0, "mean_score": 0.0, "mean_spread": 0.0}
         else:
             total_scores  = sum(agg["scores"])
             total_spreads = sum(agg["spreads"])
@@ -257,63 +249,144 @@ def summarize_teams(
             }
     return summary
 
-# ── MAIN ENTRYPOINT ──────────────────────────────────────────────────────────
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-b", "--baseline", type=Path, required=True)
-    parser.add_argument("-s", "--scoring",  type=Path, required=True)
-    parser.add_argument("-w", "--week",     type=int,   default=1)
-    parser.add_argument("-n", "--sims",     type=int,   default=1000)
-    parser.add_argument("-k", "--odds-key", type=str,   required=False)
+    parser.add_argument(
+        "-b", "--baseline",
+        type=Path,
+        help=(
+            "Baseline JSON; defaults to "
+            "src/output/projections/{year}_w{week}/footballguys_base_{year}_w{week}.json"
+        )
+    )
+    parser.add_argument(
+        "-s", "--scoring",
+        type=Path,
+        help="Scoring JSON; defaults to src/data/scoring.json"
+    )
+    parser.add_argument(
+        "-w", "--week",
+        type=int,
+        default=1,
+        help="Week number"
+    )
+    parser.add_argument(
+        "-n", "--sims",
+        type=int,
+        default=1000,
+        help="Number of simulations"
+    )
+    parser.add_argument(
+        "-k", "--odds-key",
+        type=str,
+        default="1e8f9c8a0b084887612c523ebc7b9c6f",
+        help="Your TheOddsAPI key"
+    )
+    parser.add_argument(
+        "--year",
+        type=int,
+        default=2025,
+        help="Season year"
+    )
+    parser.add_argument(
+        "--days",
+        nargs="+",
+        choices=[
+            "Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday",
+            "Sunday", "All"
+        ],
+        default=["Sunday", "Monday"],
+        help=(
+            "Which weekdays to simulate "
+            "(e.g. Thursday or Sunday Tuesday). 'All' = every game."
+        )
+    )
     args = parser.parse_args()
 
-    players     = prepare_players(args.baseline, args.week)
-    player_meta = {p["player"]:{"id":p["id"],"team":p["team"],"pos":p["position"]} for p in players}
+    # resolve baseline & scoring JSON paths
+    baseline = args.baseline or (
+        PROJS_ROOT / f"{args.year}_w{args.week}" /
+        f"footballguys_base_{args.year}_w{args.week}.json"
+    )
+    scoring  = args.scoring or SCORING_JSON
 
-    scoring    = load_json(args.scoring)["scoring"]
-    sched_full = nfl.import_schedules([2025])
+    if not baseline.exists():
+        raise FileNotFoundError(f"Baseline JSON not found: {baseline}")
+    if not scoring.exists():
+        raise FileNotFoundError(f"Scoring JSON not found: {scoring}")
+
+    # label folder by weekday (or "all")
+    label = args.days[0] if len(args.days) == 1 else "all"
+    sims_dir = SIMS_ROOT / f"{args.year}_w{args.week}_{label}"
+    sims_dir.mkdir(parents=True, exist_ok=True)
+
+    # define output paths under sims_dir
+    PLAYER_SUMMARY = sims_dir / "player_summary.json"
+    TEAM_SUMMARY   = sims_dir / "team_summary.json"
+    BETTING_CSV    = sims_dir / "betting.csv"
+    BETTING_XLSX   = sims_dir / "betting.xlsx"
+
+    # load & prepare players
+    players     = prepare_players(baseline, args.week)
+    player_meta = {
+        p["player"]: {"id": p["id"], "team": p["team"], "pos": p["position"]}
+        for p in players
+    }
+
+    scoring_rules = load_json(scoring)["scoring"]
+
+    # load schedule and filter by week
+    sched_full = nfl.import_schedules([args.year])
     sched_full["home_team"] = sched_full["home_team"].map(lambda t: team_map.get(t, t))
     sched_full["away_team"] = sched_full["away_team"].map(lambda t: team_map.get(t, t))
     week_sched = sched_full[sched_full["week"] == args.week]
 
-    main_games    = week_sched[week_sched["weekday"].isin(["Sunday","Monday"])]
+    # filter by days argument
+    if "All" in args.days:
+        main_games = week_sched
+    else:
+        main_games = week_sched[week_sched["weekday"].isin(args.days)]
     main_matchups = [(r.away_team, r.home_team) for r in main_games.itertuples()]
 
-    teams: Dict[str,List[Dict]] = {}
+    # assemble teams dict
+    teams: Dict[str, List[Dict]] = {}
     for p in players:
-        teams.setdefault(p["team"],[]).append(p)
+        teams.setdefault(p["team"], []).append(p)
     for away, home in main_matchups:
-        teams.setdefault(away,[]); teams.setdefault(home,[])
+        teams.setdefault(away, [])
+        teams.setdefault(home, [])
 
-    pa_main, ta_main = simulate_for(main_matchups, teams, scoring, args.sims)
+    # run monte carlo sims
+    pa_main, ta_main = simulate_for(main_matchups, teams, scoring_rules, args.sims)
 
+    # write player_summary.json
     ps_main = summarize_players(pa_main, player_meta)
     write_json(PLAYER_SUMMARY, ps_main)
     print(f"Wrote {PLAYER_SUMMARY}")
-        # ── EXPORT PLAYER SUMMARY TO CSV & EXCEL ─────────────────────────────────
-    # flatten ps_main into a table, then write .csv and .xlsx
+
+    # export player_summary CSV & XLSX
     df_players = pd.json_normalize(
-        [
-            {"player": name, **stats}
-            for name, stats in ps_main.items()
-        ],
+        [{"player": name, **stats} for name, stats in ps_main.items()],
         sep="_"
     )
-    csv_path  = OUTPUT_DIR / "player_summary.csv"
-    xlsx_path = OUTPUT_DIR / "player_summary.xlsx"
+    csv_path  = sims_dir / "player_summary.csv"
+    xlsx_path = sims_dir / "player_summary.xlsx"
     df_players.to_csv(csv_path, index=False)
     df_players.to_excel(xlsx_path, index=False)
     print(f"Wrote {csv_path} & {xlsx_path}")
 
+    # write team_summary.json
     ts_main = summarize_teams(ta_main, args.sims)
     write_json(TEAM_SUMMARY, ts_main)
     print(f"Wrote {TEAM_SUMMARY}")
 
+    # write betting.csv & betting.xlsx
     header = [
-        "type","home","away",
-        "home_win_prob","away_win_prob",
-        "home_avg_score","away_avg_score",
-        "mean_total","mean_spread"
+        "type", "home", "away",
+        "home_win_prob", "away_win_prob",
+        "home_avg_score", "away_avg_score",
+        "mean_total", "mean_spread"
     ]
     rows = []
     for r in main_games.itertuples():
@@ -322,12 +395,12 @@ if __name__ == "__main__":
         rows.append([
             "GAME",
             h, a,
-            round(hh["win_prob"],3),
-            round(aa["win_prob"],3),
-            round(hh["mean_score"],1),
-            round(aa["mean_score"],1),
-            round(hh["mean_score"] + aa["mean_score"],1),
-            round(hh["mean_score"] - aa["mean_score"],1)
+            round(hh["win_prob"], 3),
+            round(aa["win_prob"], 3),
+            round(hh["mean_score"], 1),
+            round(aa["mean_score"], 1),
+            round(hh["mean_score"] + aa["mean_score"], 1),
+            round(hh["mean_score"] - aa["mean_score"], 1)
         ])
     write_csv(BETTING_CSV, header, rows)
     pd.read_csv(BETTING_CSV).to_excel(BETTING_XLSX, index=False)

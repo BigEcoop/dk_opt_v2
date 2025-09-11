@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # src/scripts/merge_salaries.py
 
-from optimizer.salary_ingestor_csv import (
+from optimizer.salary_ingestor_csv1 import (
     get_draftkings_salaries_csv,
     get_fanduel_salaries_csv,
 )

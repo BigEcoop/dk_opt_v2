@@ -8,7 +8,7 @@ from typing import Sequence, List
 from io import StringIO
 from pathlib import Path
 
-from optimizer.salary_ingestor_csv import (
+from optimizer.salary_ingestor_csv1 import (
     get_draftkings_salaries_csv,
     get_fanduel_salaries_csv,
 )
