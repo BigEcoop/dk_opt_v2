@@ -9,8 +9,8 @@ packages = [
   { include = "optimizer", from = "src" }
 ]
 
-# point Poetry to your scoring.json under src/data/
-include = ["data/scoring.json"]
+# include your scoring.json in the distribution
+include = ["src/data/scoring.json"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
