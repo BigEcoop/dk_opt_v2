@@ -45,9 +45,9 @@ def cmd_compare_salaries(args):
     print(f"\n-- FD vs DK Comparison (Week {args.week}, Δ>{args.threshold}) --")
     print(df.head())
 
-    # 6) Write CSV to src/output/fd_vs_dk_w{week}.csv
+    # 6) Write CSV to src/output/salary/fd_vs_dk_w{week}.csv
     project_root = Path(__file__).resolve().parents[2]
-    out_dir      = project_root / "src" / "output"
+    out_dir      = project_root / "src" / "output" / "salary"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     out_path = Path(args.output) if args.output else out_dir / f"fd_vs_dk_w{args.week}.csv"
@@ -65,7 +65,7 @@ def cmd_track_changes(args):
     year = args.year
 
     project_root = Path(__file__).resolve().parents[2]
-    out_dir      = project_root / "src" / "output"
+    out_dir      = project_root / "src" / "output" / "salary"
     comp_file    = out_dir / f"fd_vs_dk_w{week}.csv"
 
     if not comp_file.exists():
@@ -86,9 +86,9 @@ def cmd_track_changes(args):
     dk_delta["dk_salary_percent"] = (
         dk_delta["dk_salary_change"] / dk_delta["dk_prev_salary"] * 100
     ).round(2)
-    dk_delta = dk_delta[[
-        "player_name", "team", "dk_salary_change", "dk_salary_percent"
-    ]]
+    dk_delta = dk_delta[
+        ["player_name", "team", "dk_salary_change", "dk_salary_percent"]
+    ]
 
     # -- FanDuel change --
     prev_fd = get_fanduel_salaries_csv(week - 1, year)[["player_name", "team", "salary"]]
@@ -105,9 +105,9 @@ def cmd_track_changes(args):
     fd_delta["fd_salary_percent"] = (
         fd_delta["fd_salary_change"] / fd_delta["fd_prev_salary"] * 100
     ).round(2)
-    fd_delta = fd_delta[[
-        "player_name", "team", "fd_salary_change", "fd_salary_percent"
-    ]]
+    fd_delta = fd_delta[
+        ["player_name", "team", "fd_salary_change", "fd_salary_percent"]
+    ]
 
     # -- Merge deltas onto comparison CSV --
     comp_df = pd.read_csv(comp_file)

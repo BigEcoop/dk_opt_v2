@@ -5,7 +5,7 @@ import pandas as pd
 import nfl_data_py as nfl
 
 from optimizer.data_fetch import fetch_weekly_data
-from optimizer.engine import score_df
+from optimizer.engine1 import score_df
 
 
 @click.group()
