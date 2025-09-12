@@ -12,7 +12,6 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 # ── PROJECT ROOT & PATHS ───────────────────────────────────────────────────────
-# __file__ is src/scripts/monte_carlo_sims.py; two levels up to project root
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 # raw baselines under src/output/projections/{year}_w{week}/footballguys_base_{year}_w{week}.json
@@ -303,16 +302,6 @@ if __name__ == "__main__":
             "(e.g. Thursday or Sunday Tuesday). 'All' = every game."
         )
     )
-    parser.add_argument(
-        "--matchup",
-        action="append",
-        nargs=2,
-        metavar=("AWAY","HOME"),
-        help=(
-            "Simulate only these games by away/home codes. "
-            "You can pass `--matchup GB WAS --matchup KC BUF`."
-        )
-    )
     args = parser.parse_args()
 
     # resolve baseline & scoring JSON paths
@@ -353,16 +342,8 @@ if __name__ == "__main__":
     sched_full["away_team"] = sched_full["away_team"].map(lambda t: team_map.get(t, t))
     week_sched = sched_full[sched_full["week"] == args.week]
 
-    # pick games
-    if args.matchup:
-        mask = False
-        for away, home in args.matchup:
-            mask |= (
-                (week_sched.away_team == away) &
-                (week_sched.home_team == home)
-            )
-        main_games = week_sched[mask]
-    elif "All" in args.days:
+    # filter by days argument
+    if "All" in args.days:
         main_games = week_sched
     else:
         main_games = week_sched[week_sched["weekday"].isin(args.days)]
