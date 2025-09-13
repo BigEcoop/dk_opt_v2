@@ -11,7 +11,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 INPUT_DIR    = PROJECT_ROOT / "src" / "data" / "projection_data" / "footballguys"
 OUTPUT_ROOT  = PROJECT_ROOT / "src" / "output" / "projections"
 
-
 def main():
     parser = argparse.ArgumentParser(
         description="Generate Footballguys projections for a given week"
@@ -41,28 +40,32 @@ def main():
     out_dir  = OUTPUT_ROOT / f"{YEAR}_w{WEEK}"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    csv_out  = out_dir / f"footballguys_projections_{YEAR}_w{WEEK}.csv"
-    xlsx_out = out_dir / f"footballguys_projections_{YEAR}_w{WEEK}.xlsx"
     json_out = out_dir / f"footballguys_base_{YEAR}_w{WEEK}.json"
 
     # load
     print(f"→ Loading {infile}")
     df = pd.read_csv(infile)
 
-    # write CSV
-    df.to_csv(csv_out, index=False)
-    print(f"✔ Wrote CSV  → {csv_out}")
+    # keep only QB, RB, WR, TE
+    df = df[df["pos"].str.lower().isin(["qb", "rb", "wr", "te"])]
 
-    # write XLSX
-    df.to_excel(xlsx_out, index=False, engine="openpyxl")
-    print(f"✔ Wrote XLSX → {xlsx_out}")
+    # select only the columns monte_carlo_sims.py uses
+    cols_to_keep = [
+        "id", "name", "pos", "team",
+        "pass-att", "pass-cmp", "pass-int", "pass-td", "pass-yds",
+        "rush-car", "rush-td", "rush-yds",
+        "rec-tgt", "rec-rec", "rec-td", "rec-yds",
+        "fum-lost",
+        "pr-td", "pr-yds",
+        "kr-td", "kr-yds"
+    ]
+    df = df[cols_to_keep]
 
     # write JSON
     records = df.where(pd.notnull(df), None).to_dict(orient="records")
     with open(json_out, "w") as fp:
         json.dump({"players": records}, fp, indent=2)
     print(f"✔ Wrote JSON → {json_out}")
-
 
 if __name__ == "__main__":
     main()
