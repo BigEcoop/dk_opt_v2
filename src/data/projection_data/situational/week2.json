@@ -1,0 +1,15 @@
+{
+  "BAL-CLE":   { "home_adv": 0.05, "weather": 0.0,   "fatigue": 0.0 },
+  "CIN-JAX":  { "home_adv": 0.05, "weather": 0.0,   "fatigue": 0.0 },
+  "DAL-NYG":  { "home_adv": 0.05, "weather": 0.0,   "fatigue": 0.0 },
+  "DET-CHI":  { "home_adv": 0.05, "weather": 0.0,   "fatigue": 0.0 },
+  "MIA-NE":   { "home_adv": 0.05, "weather": 0.0,   "fatigue": 0.0 },
+  "NO-SF":    { "home_adv": 0.05, "weather": 0.0,   "fatigue": 0.0 },
+  "NYJ-BUF":  { "home_adv": 0.05, "weather": 0.0,   "fatigue": 0.0 },
+  "PIT-SEA":  { "home_adv": 0.05, "weather": -0.10, "fatigue": 0.0 },
+  "TEN-LAR":  { "home_adv": 0.05, "weather": 0.0,   "fatigue": 0.0 },
+  "ARI-CAR":  { "home_adv": 0.05, "weather": 0.0,   "fatigue": 0.0 },
+  "IND-DEN":  { "home_adv": 0.05, "weather": 0.0,   "fatigue": 0.0 },
+  "KC-PHI":   { "home_adv": 0.05, "weather": -0.15, "fatigue": 0.0 },
+  "MIN-ATL":  { "home_adv": 0.05, "weather": 0.0,   "fatigue": 0.0 }
+}
