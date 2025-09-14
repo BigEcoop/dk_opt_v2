@@ -1,0 +1,100 @@
+{
+  "JAX-CIN": {
+    "away_proj": 22.0,
+    "home_proj": 28.0,
+    "over_under": 49.2,
+    "away_win_prob": 0.29000000000000004,
+    "home_win_prob": 0.71
+  },
+  "NYG-DAL": {
+    "away_proj": 21.0,
+    "home_proj": 24.0,
+    "over_under": 44.7,
+    "away_win_prob": 0.38,
+    "home_win_prob": 0.62
+  },
+  "CHI-DET": {
+    "away_proj": 22.0,
+    "home_proj": 27.0,
+    "over_under": 48.1,
+    "away_win_prob": 0.31999999999999995,
+    "home_win_prob": 0.68
+  },
+  "TEN-LAR": {
+    "away_proj": 20.0,
+    "home_proj": 26.0,
+    "over_under": 45.6,
+    "away_win_prob": 0.29000000000000004,
+    "home_win_prob": 0.71
+  },
+  "MIA-NE": {
+    "away_proj": 23.0,
+    "home_proj": 23.0,
+    "over_under": 46.1,
+    "away_win_prob": 0.5,
+    "home_win_prob": 0.5
+  },
+  "NYJ-BUF": {
+    "away_proj": 22.0,
+    "home_proj": 28.0,
+    "over_under": 49.5,
+    "away_win_prob": 0.27,
+    "home_win_prob": 0.73
+  },
+  "SEA-PIT": {
+    "away_proj": 18.0,
+    "home_proj": 22.0,
+    "over_under": 39.7,
+    "away_win_prob": 0.33999999999999997,
+    "home_win_prob": 0.66
+  },
+  "CLE-BAL": {
+    "away_proj": 16.0,
+    "home_proj": 29.0,
+    "over_under": 45.2,
+    "away_win_prob": 0.10999999999999999,
+    "home_win_prob": 0.89
+  },
+  "IND-DEN": {
+    "away_proj": 21.0,
+    "home_proj": 21.0,
+    "over_under": 41.6,
+    "away_win_prob": 0.49,
+    "home_win_prob": 0.51
+  },
+  "CAR-ARI": {
+    "away_proj": 20.0,
+    "home_proj": 25.0,
+    "over_under": 45.5,
+    "away_win_prob": 0.31000000000000005,
+    "home_win_prob": 0.69
+  },
+  "KC-PHI": {
+    "away_proj": 25.0,
+    "home_proj": 25.0,
+    "over_under": 49.9,
+    "away_win_prob": 0.47,
+    "home_win_prob": 0.53
+  },
+  "ATL-MIN": {
+    "away_proj": 20.0,
+    "home_proj": 24.0,
+    "over_under": 44.3,
+    "away_win_prob": 0.35,
+    "home_win_prob": 0.65
+  },
+  "HOU-TB": {
+    "away_proj": 22.0,
+    "home_proj": 24.0,
+    "over_under": 46.1,
+    "away_win_prob": 0.42000000000000004,
+    "home_win_prob": 0.58
+  },
+  "LV-LAC": {
+    "away_proj": 20.0,
+    "home_proj": 25.0,
+    "over_under": 45.3,
+    "away_win_prob": 0.35,
+    "home_win_prob": 0.65
+  }
+}

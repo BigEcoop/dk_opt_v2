@@ -13,29 +13,37 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 # ── PROJECT ROOT & PATHS ───────────────────────────────────────────────────────
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-PROJS_ROOT   = PROJECT_ROOT / "src" / "output" / "projections"
-SCORING_JSON = PROJECT_ROOT / "src" / "data"   / "scoring.json"
-SIMS_ROOT    = PROJECT_ROOT / "src" / "output" / "sims"
+PROJECT_ROOT  = Path(__file__).resolve().parents[2]
+PROJS_ROOT    = PROJECT_ROOT / "src" / "output" / "projections"
+SCORING_JSON  = PROJECT_ROOT / "src" / "data" / "scoring.json"
+SIMS_ROOT     = PROJECT_ROOT / "src" / "output" / "sims"
+ESPN_DIR      = PROJECT_ROOT / "src" / "data" / "projection_data" / "espn"
+TEAM_PROFILE  = PROJECT_ROOT / "src" / "data" / "projection_data" / "2025_team.json"
 
-# ── SIM CONSTANTS ───────────────────────────────────────────────────────────────
-TEAM_SCALE = 5.87
-team_map   = {"LA": "LAR", "LAR": "LAR", "FA": None}
+# ── TUNING CONSTANTS ────────────────────────────────────────────────────────────
+DISPERSION_K   = 13      # overdispersion param for turnovers
+ESPN_WEIGHT    = 0.04    # weight for ESPN total‐score calibration
+FG_LAMBDA      = 1.2     # Poisson mean FG attempts
+SCORE_DAMPEN   = 0.75    # global dampening of raw scores
+CLAMP_MULT     = 2.0     # clamp raw yardage at [0, μ*CLAMP_MULT]
 
-key_map = {
-    "pass_att":  "pass_attempts",     "pass_cmp":  "pass_completions",
-    "pass_td":   "passing_tds",       "pass_yds":  "passing_yds",
-    "pass_int":  "interceptions",     "rush_car":  "rushing_attempts",
-    "rush_td":   "rushing_tds",       "rush_yds":  "rushing_yds",
-    "rec_tgt":   "receiving_targets", "rec_rec":   "receptions",
-    "rec_td":    "receiving_tds",     "rec_yds":   "receiving_yds",
-    "fum_lost":  "fumbles",           "pr_yds":    "punt_return_yards",
-    "pr_tds":    "punt_return_tds",   "kr_yds":    "kick_return_yds",
-    "kr_tds":    "kick_return_tds"
-}
+team_map = {"LA": "LAR", "LAR": "LAR", "FA": None}
 
+OUTPUT_CATEGORIES = [
+    "pass_attempts","pass_completions","passing_yds","passing_tds","interceptions",
+    "rushing_attempts","rushing_yds","rushing_tds",
+    "receiving_targets","receptions","receiving_yds","receiving_tds",
+    "fumbles","punt_return_yards","punt_return_tds","kick_return_yards","kick_return_tds"
+]
 OFFENSE_POSITIONS = {"qb", "rb", "wr", "te"}
-OUTPUT_CATEGORIES  = list(key_map.values())
+
+# ── OVERDISPERSION SAMPLER ─────────────────────────────────────────────────────
+def sample_nb(mu: float, k: int = DISPERSION_K) -> int:
+    """Negative‐Binomial(mean=mu, var=mu + μ²/k) sampler for low‐count stats."""
+    if mu <= 0:
+        return 0
+    p = k / (k + mu)
+    return np.random.negative_binomial(k, p)
 
 # ── HELPERS ────────────────────────────────────────────────────────────────────
 def load_json(path: Path) -> Dict:
@@ -54,12 +62,14 @@ def write_csv(path: Path, header: List[str], rows: List[List]):
 
 # ── PREPARE PLAYERS ────────────────────────────────────────────────────────────
 def prepare_players(baseline_path: Path, week: int) -> List[Dict]:
-    raw = load_json(baseline_path)["players"]
+    j   = load_json(baseline_path)
+    raw = j.get("players", [])
+
     try:
         year   = int(baseline_path.stem.split("_")[2])
         inj_df = nfl.import_injuries([year])
     except (urllib.error.HTTPError, ValueError):
-        inj_df = pd.DataFrame(columns=["player_name", "injury_status"])
+        inj_df = pd.DataFrame(columns=["player_name","injury_status"])
     injured = set(
         inj_df[inj_df["injury_status"].isin({"questionable","out","doubtful"})]
              ["player_name"]
@@ -67,7 +77,7 @@ def prepare_players(baseline_path: Path, week: int) -> List[Dict]:
 
     players: List[Dict] = []
     for rec in raw:
-        name   = rec.get("name") or rec.get("Player") or rec.get("player")
+        name   = rec.get("name") or rec.get("player") or rec.get("Player")
         pid    = rec.get("id")   or rec.get("ID")
         raw_tm = rec.get("team") or rec.get("Team")
         team   = team_map.get(raw_tm, raw_tm)
@@ -78,14 +88,15 @@ def prepare_players(baseline_path: Path, week: int) -> List[Dict]:
         if name in injured or pos not in OFFENSE_POSITIONS:
             continue
 
+        stats_raw = rec.get("stats", {})
         stats: Dict[str, float] = {}
-        for k, v in rec.items():
-            norm = k.strip().lower().replace(" ", "_").replace("-", "_")
-            if norm in key_map:
+        for st, mu in stats_raw.items():
+            if st in OUTPUT_CATEGORIES:
                 try:
-                    stats[key_map[norm]] = float(v)
+                    stats[st] = float(mu)
                 except (ValueError, TypeError):
-                    stats[key_map[norm]] = 0.0
+                    stats[st] = 0.0
+
         if stats:
             players.append({
                 "player":   name,
@@ -94,54 +105,49 @@ def prepare_players(baseline_path: Path, week: int) -> List[Dict]:
                 "position": pos,
                 "stats":    stats
             })
+
     return players
 
 # ── SCORING & SIMULATION ───────────────────────────────────────────────────────
 def score_statline(statline: Dict[str, float], scoring: Dict) -> float:
     o, y, b = scoring["offense"], scoring["yardage"], scoring["bonuses"]
     pts = 0.0
-    pts += statline.get("passing_tds", 0)     * o["passing_td"]
-    pts += statline.get("interceptions", 0)   * o["interception"]
-    pts += statline.get("passing_yds", 0)     * y["passing"]
+    pts += statline.get("passing_tds", 0)   * o["passing_td"]
+    pts += statline.get("interceptions", 0) * o["interception"]
+    pts += statline.get("passing_yds", 0)   * y["passing"]
     if statline.get("passing_yds", 0) >= 300:
         pts += b["passing_300_yds"]
-    pts += statline.get("rushing_tds", 0)     * o["rushing_td"]
-    pts += statline.get("rushing_yds", 0)     * y["rushing"]
+    pts += statline.get("rushing_tds", 0)   * o["rushing_td"]
+    pts += statline.get("rushing_yds", 0)   * y["rushing"]
     if statline.get("rushing_yds", 0) >= 100:
         pts += b["rushing_100_yds"]
-    pts += statline.get("receiving_tds", 0)   * o["receiving_td"]
-    pts += statline.get("receptions", 0)      * o["reception"]
-    pts += statline.get("receiving_yds", 0)   * y["receiving"]
+    pts += statline.get("receiving_tds", 0) * o["receiving_td"]
+    pts += statline.get("receptions", 0)    * o["reception"]
+    pts += statline.get("receiving_yds", 0) * y["receiving"]
     if statline.get("receiving_yds", 0) >= 100:
         pts += b["receiving_100_yds"]
-    pts += statline.get("fumbles", 0)         * o["fumble_lost"]
+    pts += statline.get("fumbles", 0)       * o["fumble_lost"]
     return pts
 
 def simulate_team_score(team_stats: Dict[str, float]) -> int:
     td_count = (
-        team_stats.get("passing_tds", 0)
-        + team_stats.get("rushing_tds", 0)
-        + team_stats.get("receiving_tds", 0)
+        team_stats.get("passing_tds", 0) +
+        team_stats.get("rushing_tds", 0) +
+        team_stats.get("receiving_tds", 0)
     )
+    # Each TD = 6 points + PAT (98%)
     pts = td_count * 6
+    pts += sum(1 for _ in range(int(td_count)) if random.random() < 0.98)
 
-    # PATs
-    pat_successes = sum(1 for _ in range(int(td_count)) if random.random() < 0.95)
-    pts += pat_successes
-
-    # FGs
-    fg_attempts  = int(random.uniform(0, 4.75))
+    # Field goals
+    fg_attempts  = np.random.poisson(lam=FG_LAMBDA)
     fg_successes = sum(1 for _ in range(fg_attempts) if random.random() < 0.85)
     pts += fg_successes * 3
 
-    # Safety
-    if random.random() < 0.03:
-        pts += 2
-
-    # Two-pt conversions (~1 attempt per 4 TDs, 50% success)
-    two_pt_attempts  = int(random.uniform(0, td_count * 0.25))
-    two_pt_successes = sum(1 for _ in range(two_pt_attempts) if random.random() < 0.5)
-    pts += two_pt_successes * 2
+    # Two-point conversions
+    two_pt_tries = np.random.binomial(int(td_count), 0.10)
+    two_pt_made  = sum(1 for _ in range(two_pt_tries) if random.random() < 0.50)
+    pts += two_pt_made * 2
 
     return pts
 
@@ -149,7 +155,8 @@ def simulate_for(
     matchups: List[Tuple[str, str]],
     teams:    Dict[str, List[Dict]],
     scoring:  Dict,
-    sims:     int
+    sims:     int,
+    espn_map: Dict[str, Dict]
 ) -> Tuple[
     Dict[str, Dict[str, List[float]]],
     Dict[str, Dict[str, List[float]]]
@@ -161,31 +168,26 @@ def simulate_for(
     team_agg = {t: {"wins": 0, "scores": [], "spreads": []} for t in teams}
 
     for away, home in matchups:
-        home_roster = teams[home]
-        away_roster = teams[away]
-
+        key = f"{away}-{home}"
         for _ in range(sims):
             def run_lineup(roster):
                 out = {}
                 for p in roster:
                     jitter = {}
                     for st, mu in p["stats"].items():
-                        if st in [
-                            "passing_tds",
-                            "rushing_tds",
-                            "receiving_tds",
-                            "interceptions",
-                            "fumbles"
-                        ]:
+                        if st in ["interceptions", "fumbles"]:
+                            jitter[st] = sample_nb(mu)
+                        elif st in ["passing_tds", "rushing_tds", "receiving_tds"]:
                             jitter[st] = np.random.poisson(lam=mu)
                         else:
-                            jitter[st] = max(0.0, random.gauss(mu, max(mu * 0.2, 1)))
+                            raw = random.gauss(mu, max(mu * 0.12, 1))
+                            jitter[st] = max(0.0, min(raw, mu * CLAMP_MULT))
                     dk_pts = score_statline(jitter, scoring)
                     out[p["player"]] = {"stats": jitter, "dk": dk_pts}
                 return out
 
-            h_out = run_lineup(home_roster)
-            a_out = run_lineup(away_roster)
+            h_out = run_lineup(teams[home])
+            a_out = run_lineup(teams[away])
 
             h_stats = {
                 c: sum(info["stats"].get(c, 0) for info in h_out.values())
@@ -198,6 +200,19 @@ def simulate_for(
 
             h_score = simulate_team_score(h_stats)
             a_score = simulate_team_score(a_stats)
+
+            # ESPN-based rescaling
+            raw_total = h_score + a_score
+            espn      = espn_map.get(key, {})
+            if espn.get("home_proj") is not None and espn.get("away_proj") is not None and raw_total > 0:
+                espn_total = espn["home_proj"] + espn["away_proj"]
+                scale      = (espn_total / raw_total) ** ESPN_WEIGHT
+                h_score    = round(h_score * scale)
+                a_score    = round(a_score * scale)
+
+            # global dampening
+            h_score = round(h_score * SCORE_DAMPEN)
+            a_score = round(a_score * SCORE_DAMPEN)
 
             winner = home if h_score >= a_score else away
             spread = h_score - a_score
@@ -247,14 +262,14 @@ def summarize_teams(
     summary: Dict[str, Dict] = {}
     for t, agg in team_agg.items():
         if not agg["scores"]:
-            summary[t] = {"win_prob":0.0,"mean_score":0.0,"mean_spread":0.0}
+            summary[t] = {"win_prob":0.0, "mean_score":0.0, "mean_spread":0.0}
         else:
-            tot_s   = sum(agg["scores"])
-            tot_sp  = sum(agg["spreads"])
+            tot_s  = sum(agg["scores"])
+            tot_sp = sum(agg["spreads"])
             summary[t] = {
-                "win_prob":    agg["wins"]/sims,
-                "mean_score":  tot_s  /(sims * TEAM_SCALE),
-                "mean_spread": tot_sp/(sims * TEAM_SCALE)
+                "win_prob":    agg["wins"] / sims,
+                "mean_score":  tot_s       / sims,
+                "mean_spread": tot_sp      / sims
             }
     return summary
 
@@ -262,47 +277,47 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-b","--baseline", type=Path, help="Baseline JSON")
     parser.add_argument("-s","--scoring",  type=Path, help="Scoring JSON")
-    parser.add_argument("-w","--week",     type=int, default=1,    help="Week number")
+    parser.add_argument("-w","--week",     type=int, default=1, help="Week number")
     parser.add_argument("-n","--sims",     type=int, default=1000, help="Number of sims")
-    parser.add_argument(
-        "-k","--odds-key",
-        type=str,
-        default=None,
-        help="Your TheOddsAPI key (optional; not used)"
-    )
-    parser.add_argument("--year", type=int, default=2025, help="Season year")
+    parser.add_argument("-k","--odds-key", type=str, default=None, help="TheOddsAPI key")
+    parser.add_argument("--year",          type=int, default=2025, help="Season year")
     parser.add_argument(
         "--days", nargs="+",
-        choices=[
-            "Monday","Tuesday","Wednesday",
-            "Thursday","Friday","Saturday",
-            "Sunday","All"
-        ],
+        choices=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","All"],
         default=["Sunday","Monday"],
         help="Weekdays to simulate; 'All'=every game"
     )
     parser.add_argument(
         "--matchup", action="append", nargs=2, metavar=("AWAY","HOME"),
-        help="Filter to specific games; e.g. --matchup KC PHI"
+        help="Filter specific games; e.g. --matchup KC PHI"
     )
     args = parser.parse_args()
 
+    dvoa_map = load_json(
+        PROJECT_ROOT / "src" / "data" / "projection_data" / f"dvoa_{args.year}.json"
+    )
+    espn_map = {}
+    ep = ESPN_DIR / f"espn_{args.year}_w{args.week}.json"
+    if ep.exists():
+        espn_map = load_json(ep)
+    team_profile = {}
+    if TEAM_PROFILE.exists():
+        team_profile = load_json(TEAM_PROFILE)
+
     baseline = args.baseline or (
         PROJS_ROOT / f"{args.year}_w{args.week}" /
-        f"footballguys_base_{args.year}_w{args.week}.json"
+        f"baseline_{args.year}_w{args.week}.json"
     )
     scoring  = args.scoring or SCORING_JSON
 
     if not baseline.exists():
-        raise FileNotFoundError(f"Baseline JSON not found: {baseline}")
+        raise FileNotFoundError(f"Baseline not found: {baseline}")
     if not scoring.exists():
-        raise FileNotFoundError(f"Scoring JSON not found: {scoring}")
+        raise FileNotFoundError(f"Scoring not found: {scoring}")
 
     players     = prepare_players(baseline, args.week)
-    player_meta = {
-        p["player"]: {"id":p["id"],"team":p["team"],"pos":p["position"]}
-        for p in players
-    }
+    player_meta = {p["player"]: {"id": p["id"], "team": p["team"], "pos": p["position"]} 
+                   for p in players}
 
     sched_full = nfl.import_schedules([args.year])
     sched_full["home_team"] = sched_full["home_team"].map(lambda t: team_map.get(t,t))
@@ -311,8 +326,8 @@ if __name__ == "__main__":
 
     if args.matchup:
         mask = False
-        for away, home in args.matchup:
-            mask |= ((week_sched.away_team == away) & (week_sched.home_team == home))
+        for aw, hm in args.matchup:
+            mask |= ((week_sched.away_team == aw) & (week_sched.home_team == hm))
         main_games = week_sched[mask]
     elif "All" in args.days:
         main_games = week_sched
@@ -324,11 +339,11 @@ if __name__ == "__main__":
     teams: Dict[str, List[Dict]] = {}
     for p in players:
         teams.setdefault(p["team"], []).append(p)
-    for away, home in main_matchups:
-        teams.setdefault(away, []); teams.setdefault(home, [])
+    for aw, hm in main_matchups:
+        teams.setdefault(aw, []); teams.setdefault(hm, [])
 
-    scoring_rules    = load_json(scoring)["scoring"]
-    pa_main, ta_main = simulate_for(main_matchups, teams, scoring_rules, args.sims)
+    scoring_rules  = load_json(scoring)["scoring"]
+    pa_main, ta_main = simulate_for(main_matchups, teams, scoring_rules, args.sims, espn_map)
 
     label    = args.days[0] if len(args.days) == 1 else "all"
     sims_dir = SIMS_ROOT / f"{args.year}_w{args.week}_{label}"
@@ -338,20 +353,9 @@ if __name__ == "__main__":
     PLAYER_SUMMARY = sims_dir / "player_summary.json"
     ps_main        = summarize_players(pa_main, player_meta)
     write_json(PLAYER_SUMMARY, ps_main)
-    print(f"Wrote {PLAYER_SUMMARY}")
-
-    df_players = pd.json_normalize([{"player":n,**s} for n,s in ps_main.items()], sep="_")
-    csv_path   = sims_dir / "player_summary.csv"
-    xlsx_path  = sims_dir / "player_summary.xlsx"
-    df_players.to_csv(csv_path, index=False)
-    df_players.to_excel(xlsx_path, index=False)
-    print(f"Wrote {csv_path} & {xlsx_path}")
-
-    # team summary
-    TEAM_SUMMARY = sims_dir / "team_summary.json"
-    ts_main      = summarize_teams(ta_main, args.sims)
-    write_json(TEAM_SUMMARY, ts_main)
-    print(f"Wrote {TEAM_SUMMARY}")
+    pd.json_normalize(
+        [{"player": n, **s} for n, s in ps_main.items()], sep="_"
+    ).to_excel(sims_dir / "player_summary.xlsx", index=False)
 
     # betting lines
     header = [
@@ -361,19 +365,17 @@ if __name__ == "__main__":
         "mean_total","mean_spread"
     ]
     rows = []
+    ts   = summarize_teams(ta_main, args.sims)
     for r in main_games.itertuples():
-        h,a = r.home_team, r.away_team
-        hh, aa = ts_main[h], ts_main[a]
+        h, a = r.home_team, r.away_team
+        hh, aa = ts[h], ts[a]
         rows.append([
-            "GAME",
-            h, a,
+            "GAME", h, a,
             round(hh["win_prob"],3), round(aa["win_prob"],3),
             round(hh["mean_score"],1), round(aa["mean_score"],1),
             round(hh["mean_score"]+aa["mean_score"],1),
             round(hh["mean_score"]-aa["mean_score"],1)
         ])
-    BET_CSV  = sims_dir / "betting.csv"
-    BET_XLSX = sims_dir / "betting.xlsx"
-    write_csv(BET_CSV, header, rows)
-    pd.read_csv(BET_CSV).to_excel(BET_XLSX, index=False)
-    print(f"Wrote {BET_CSV} & {BET_XLSX}")
+    write_csv(sims_dir/"betting.csv", header, rows)
+    pd.read_csv(sims_dir/"betting.csv").to_excel(sims_dir/"betting.xlsx", index=False)
+    print(f"Wrote {PLAYER_SUMMARY} & betting.csv to {sims_dir}")

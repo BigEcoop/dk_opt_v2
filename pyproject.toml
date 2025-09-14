@@ -5,25 +5,32 @@ description = "DraftKings NFL optimizer"
 authors = ["Elvis <elvis@example.com>"]
 readme = "README.md"
 
+# include both your optimizer package and the scripts folder
 packages = [
-  { include = "optimizer", from = "src" }
+  { include = "optimizer", from = "src" },
+  { include = "scripts",   from = "src" }
 ]
 
 # include your scoring.json in the distribution
 include = ["src/data/scoring.json"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-nfl_data_py = "0.3.3"
-pandas = "^1.5.3"
-importlib-resources = "^6.1.1"
-openpyxl = "^3.1.5"
+python               = "^3.11"
+nfl_data_py          = "0.3.3"
+pandas               = "^1.5.3"
+importlib-resources  = "^6.1.1"
+openpyxl             = "^3.1.5"
+requests             = "^2.30.0"
+beautifulsoup4       = "^4.12.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.0"
-black = "^24.4.0"
-mypy = "^1.10.0"
+black  = "^24.4.0"
+mypy   = "^1.10.0"
+
+[tool.poetry.scripts]
+fetch-espn = "scripts.fetch_espn:main"
 
 [build-system]
-requires = ["poetry-core>=1.8.0"]
+requires    = ["poetry-core>=1.8.0"]
 build-backend = "poetry.core.masonry.api"
