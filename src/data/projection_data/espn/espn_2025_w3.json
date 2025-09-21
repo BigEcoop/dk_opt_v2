@@ -1,146 +1,107 @@
 {
-  "MIA-BUF": {
-    "spread": 12.5,
-    "total": 49.5,
-    "over_under": 49.5,
-    "home_win_prob": 0.7527,
-    "away_win_prob": 0.2473,
-    "predicted_home_score": 31,
-    "predicted_away_score": 19
-  },
-  "NYJ-TB": {
-    "spread": 6.5,
-    "total": 44.5,
-    "over_under": 44.5,
-    "home_win_prob": 0.7163,
-    "away_win_prob": 0.2837,
-    "predicted_home_score": 26,
-    "predicted_away_score": 19
-  },
-  "IND-TEN": {
-    "spread": 3.5,
-    "total": 43.5,
-    "over_under": 43.5,
-    "home_win_prob": 0.3513,
-    "away_win_prob": 0.6487,
-    "predicted_home_score": 24,
-    "predicted_away_score": 20
-  },
-  "LV-WSH": {
-    "spread": 3.5,
-    "total": 44.5,
-    "over_under": 44.5,
-    "home_win_prob": 0.5983,
-    "away_win_prob": 0.4017,
-    "predicted_home_score": 24,
-    "predicted_away_score": 21
-  },
-  "LAR-PHI": {
-    "spread": 3.5,
-    "total": 44.5,
-    "over_under": 44.5,
-    "home_win_prob": 0.5860,
-    "away_win_prob": 0.4140,
-    "predicted_home_score": 24,
-    "predicted_away_score": 21
-  },
   "ATL-CAR": {
-    "spread": 5.5,
-    "total": 43.5,
-    "over_under": 43.5,
-    "home_win_prob": 0.5573,
-    "away_win_prob": 0.4427,
-    "predicted_home_score": 25,
-    "predicted_away_score": 19
-  },
-  "HOU-JAX": {
-    "spread": 1.5,
-    "total": 44.5,
-    "over_under": 44.5,
-    "home_win_prob": 0.5340,
-    "away_win_prob": 0.4660,
-    "predicted_home_score": 23,
-    "predicted_away_score": 22
+    "away_proj": 24 ,
+    "home_proj": 21 ,
+    "over_under": 44.6 ,
+    "away_win_prob": 62 ,
+    "home_win_prob": 38
   },
   "GB-CLE": {
-    "spread": 8.5,
-    "total": 42.5,
-    "over_under": 42.5,
-    "home_win_prob": 0.7047,
-    "away_win_prob": 0.2953,
-    "predicted_home_score": 34,
-    "predicted_away_score": 21
+    "away_proj": 24 ,
+    "home_proj": 15 ,
+    "over_under": 38.7 ,
+    "away_win_prob": 81 ,
+    "home_win_prob": 19
   },
-  "PIT-NE": {
-    "spread": 1.5,
-    "total": 44.5,
-    "over_under": 44.5,
-    "home_win_prob": 0.4993,
-    "away_win_prob": 0.5007,
-    "predicted_home_score": 23,
-    "predicted_away_score": 22
+  "HOU-JAX": {
+    "away_proj": 20,
+    "home_proj": 22 ,
+    "over_under": 41.1 ,
+    "away_win_prob": 43 ,
+    "home_win_prob": 57
   },
   "CIN-MIN": {
-    "spread": 3.5,
-    "total": 41.5,
-    "over_under": 41.5,
-    "home_win_prob": 0.5133,
-    "away_win_prob": 0.4867,
-    "predicted_home_score": 23,
-    "predicted_away_score": 19
+    "away_proj": 20 ,
+    "home_proj": 21,
+    "over_under": 41.3 ,
+    "away_win_prob": 46 ,
+    "home_win_prob": 54
+  },
+  "PIT-NE": {
+    "away_proj": 22 ,
+    "home_proj": 22 ,
+    "over_under": 44.2 ,
+    "away_win_prob": 51,
+    "home_win_prob": 49
+  },
+  "LAR-PHI": {
+    "away_proj": 23 ,
+    "home_proj":27,
+    "over_under":  49.3,
+    "away_win_prob": 37 ,
+    "home_win_prob": 63
+  },
+  "NYJ-TB": {
+    "away_proj": 19,
+    "home_proj": 27 ,
+    "over_under": 46.1 ,
+    "away_win_prob": 24 ,
+    "home_win_prob": 76
+  },
+  "TEN-IND": {
+    "away_proj": 24 ,
+    "home_proj": 19,
+    "over_under": 42.6 ,
+    "away_win_prob": 69 ,
+    "home_win_prob": 31
+  },
+  "LV-WAS": {
+    "away_proj": 19,
+    "home_proj": 27,
+    "over_under": 46.4,
+    "away_win_prob": 25,
+    "home_win_prob": 75
   },
   "DEN-LAC": {
-    "spread": 2.5,
-    "total": 45.5,
-    "over_under": 45.5,
-    "home_win_prob": 0.5727,
-    "away_win_prob": 0.4273,
-    "predicted_home_score": 24,
-    "predicted_away_score": 22
+    "away_proj": 22,
+    "home_proj": 23,
+    "over_under": 45 ,
+    "away_win_prob": 43 ,
+    "home_win_prob": 57
   },
   "NO-SEA": {
-    "spread": 7.5,
-    "total": 41.5,
-    "over_under": 41.5,
-    "home_win_prob": 0.6473,
-    "away_win_prob": 0.3527,
-    "predicted_home_score": 25,
-    "predicted_away_score": 17
+    "away_proj": 17 ,
+    "home_proj":23,
+    "over_under": 39.3,
+    "away_win_prob": 30,
+    "home_win_prob": 70
+  },
+  "CHI-DAL": {
+    "away_proj": 26,
+    "home_proj": 26,
+    "over_under": 52,
+    "away_win_prob": 51 ,
+    "home_win_prob": 49
   },
   "ARI-SF": {
-    "spread": 1.5,
-    "total": 44.5,
-    "over_under": 44.5,
-    "home_win_prob": 0.5260,
-    "away_win_prob": 0.4740,
-    "predicted_home_score": 23,
-    "predicted_away_score": 21
-  },
-  "DAL-CHI": {
-    "spread": 1.5,
-    "total": 49.5,
-    "over_under": 49.5,
-    "home_win_prob": 0.5347,
-    "away_win_prob": 0.4653,
-    "predicted_home_score": 31,
-    "predicted_away_score": 27
+    "away_proj": 22 ,
+    "home_proj": 25,
+    "over_under": 47 ,
+    "away_win_prob": 38 ,
+    "home_win_prob": 62
   },
   "KC-NYG": {
-    "spread": 6.5,
-    "total": 44.5,
-    "over_under": 44.5,
-    "home_win_prob": 0.6667,
-    "away_win_prob": 0.3333,
-    "predicted_home_score": 26,
-    "predicted_away_score": 19
+    "away_proj": 25,
+    "home_proj": 21 ,
+    "over_under": 45.2 ,
+    "away_win_prob": 64,
+    "home_win_prob": 36
   },
   "DET-BAL": {
-    "spread": 5.5,
-    "total": 51.5,
-    "over_under": 51.5,
-    "home_win_prob": 0.4387,
-    "away_win_prob": 0.5613,
-    "predicted_home_score": 29,
-    "predicted_away_score": 23
+    "away_proj": 26 ,
+    "home_proj": 29,
+    "over_under": 54.6 ,
+    "away_win_prob": 41 ,
+    "home_win_prob": 59
   }
 }
