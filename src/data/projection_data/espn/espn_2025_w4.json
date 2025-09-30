@@ -1,0 +1,107 @@
+{
+  "MIN-PIT": {
+    "away_proj": 19.0,
+    "home_proj": 19.0,
+    "over_under": 37.7,
+    "away_win_prob": 49 ,
+    "home_win_prob": 51
+  },
+  "ATL-WAS": {
+    "away_proj": 24,
+    "home_proj": 20.0,
+    "over_under": 44.2,
+    "away_win_prob": 62,
+    "home_win_prob": 38
+  },
+  "NO-BUF": {
+    "away_proj": 17.0,
+    "home_proj": 32.0,
+    "over_under": 48.2,
+    "away_win_prob": 7,
+    "home_win_prob": 93
+  },
+  "CLE-DET": {
+    "away_proj": 17.0,
+    "home_proj": 28.0,
+    "over_under": 44.5,
+    "away_win_prob": 15,
+    "home_win_prob": 85
+  },
+  "CAR-NE": {
+    "away_proj": 21.0,
+    "home_proj": 21.0,
+    "over_under": 41.8,
+    "away_win_prob": 52,
+    "home_win_prob": 48
+  },
+  "NYG-LAC": {
+    "away_proj": 26,
+    "home_proj": 18.0,
+    "over_under": 44.0,
+    "away_win_prob": 21.9,
+    "home_win_prob": 78
+  },
+  "TB-PHI": {
+    "away_proj": 25.0,
+    "home_proj": 24.0,
+    "over_under": 49.2,
+    "away_win_prob": 55,
+    "home_win_prob": 44.99999
+  },
+  "TEN-HOU": {
+    "away_proj": 15.0,
+    "home_proj": 23.0,
+    "over_under": 38.5,
+    "away_win_prob": 24,
+    "home_win_prob": 76
+  },
+  "IND-LAR": {
+    "away_proj": 23.0,
+    "home_proj": 24.0,
+    "over_under": 47.6,
+    "away_win_prob": 47,
+    "home_win_prob": 53
+  },
+  "KC-BAL": {
+    "away_proj": 27.0,
+    "home_proj": 23.0,
+    "over_under": 49.8,
+    "away_win_prob": 67,
+    "home_win_prob": 32.99999
+  },
+  "LV-CHI": {
+    "away_proj": 26.0,
+    "home_proj": 22.0,
+    "over_under": 48.3,
+    "away_win_prob": 62,
+    "home_win_prob": 38
+  },
+  "DAL-GB": {
+    "away_proj": 27.0,
+    "home_proj": 20.0,
+    "over_under": 47.3,
+    "away_win_prob": 73,
+    "home_win_prob": 27
+  },
+  "MIA-NYJ": {
+    "away_proj": 22.0,
+    "home_proj": 22.0,
+    "over_under": 43.8,
+    "away_win_prob": 51,
+    "home_win_prob": 49
+  },
+  "JAX-SF": {
+    "away_proj": 21.0,
+    "home_proj": 24.0,
+    "over_under": 45.3,
+    "away_win_prob": 27,
+    "home_win_prob": 63
+  },
+  "CIN-DEN": {
+    "away_proj": 17.0,
+    "home_proj": 26.0,
+    "over_under": 43.7,
+    "away_win_prob": 19.99999,
+    "home_win_prob": 80
+  }
+}

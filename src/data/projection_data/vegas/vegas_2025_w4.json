@@ -1,0 +1,18 @@
+{
+  "PIT-MIN": { "spread": 2.5, "total": 41.5 },
+  "TB-PHI":  { "spread": 3.5, "total": 44.5 },
+  "BUF-NO":  { "spread": 14.5, "total": 48.5 },
+  "NE-CAR":  { "spread": 5.5, "total": 42.5 },
+  "ATL-WSH": { "spread": 2.5, "total": 43.5 },
+  "DET-CLE": { "spread": 10.0, "total": 44.5 },
+  "HOU-TEN": { "spread": 7.0, "total": 39.5 },
+  "NYG-LAC": { "spread": 6.0, "total": 43.5 },
+  "SF-JAX":  { "spread": 3.5, "total": 46.5 },
+  "LAR-IND": { "spread": 3.5, "total": 49.5 },
+  "LV-CHI":  { "spread": 1.5, "total": 47.5 },
+  "KC-BAL":  { "spread": 2.5, "total": 48.5 },
+  "DAL-GB":  { "spread": 7.0, "total": 47.5 },
+  "MIA-NYJ": { "spread": 2.5, "total": 45.5 },
+  "DEN-CIN": { "spread": 7.5, "total": 44.5 },
+  "ARI-SEA": { "spread": 1.5, "total": 43.5 }
+}

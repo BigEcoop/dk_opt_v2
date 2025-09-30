@@ -1,0 +1,156 @@
+{
+  "New England Patriots": {
+    "pos": "D",
+    "val": 2.5,
+    "proj_mean": 7.0,
+    "ownership": 0.083,
+    "rank": 1
+  },
+  "Detroit Lions": {
+    "pos": "D",
+    "val": 2.4,
+    "proj_mean": 8.6,
+    "ownership": 0.0711,
+    "rank": 2
+  },
+  "Houston Texans": {
+    "pos": "D",
+    "val": 2.3,
+    "proj_mean": 8.8,
+    "ownership": 0.118,
+    "rank": 3
+  },
+  "Buffalo Bills": {
+    "pos": "D",
+    "val": 2.3,
+    "proj_mean": 7.4,
+    "ownership": 0.0699,
+    "rank": 4
+  },
+  "Los Angeles Chargers": {
+    "pos": "D",
+    "val": 2.3,
+    "proj_mean": 7.7,
+    "ownership": 0.0507,
+    "rank": 5
+  },
+  "Las Vegas Raiders": {
+    "pos": "D",
+    "val": 2.3,
+    "proj_mean": 6.2,
+    "ownership": 0.0479,
+    "rank": 6
+  },
+  "Carolina Panthers": {
+    "pos": "D",
+    "val": 2.2,
+    "proj_mean": 6.1,
+    "ownership": 0.0689,
+    "rank": 7
+  },
+  "Jacksonville Jaguars": {
+    "pos": "D",
+    "val": 2.1,
+    "proj_mean": 5.6,
+    "ownership": 0.024,
+    "rank": 8
+  },
+  "Tennessee Titans": {
+    "pos": "D",
+    "val": 2.1,
+    "proj_mean": 5.7,
+    "ownership": 0.0766,
+    "rank": 9
+  },
+  "New York Giants": {
+    "pos": "D",
+    "val": 2.1,
+    "proj_mean": 6.0,
+    "ownership": 0.0692,
+    "rank": 10
+  },
+  "Indianapolis Colts": {
+    "pos": "D",
+    "val": 2.1,
+    "proj_mean": 5.2,
+    "ownership": 0.0194,
+    "rank": 11
+  },
+  "Los Angeles Rams": {
+    "pos": "D",
+    "val": 2.1,
+    "proj_mean": 6.2,
+    "ownership": 0.0233,
+    "rank": 12
+  },
+  "Cleveland Browns": {
+    "pos": "D",
+    "val": 2.0,
+    "proj_mean": 5.1,
+    "ownership": 0.0156,
+    "rank": 13
+  },
+  "Baltimore Ravens": {
+    "pos": "D",
+    "val": 2.0,
+    "proj_mean": 5.2,
+    "ownership": 0.031,
+    "rank": 14
+  },
+  "Tampa Bay Buccaneers": {
+    "pos": "D",
+    "val": 1.9,
+    "proj_mean": 5.7,
+    "ownership": 0.028,
+    "rank": 15
+  },
+  "Chicago Bears": {
+    "pos": "D",
+    "val": 1.9,
+    "proj_mean": 6.4,
+    "ownership": 0.0296,
+    "rank": 16
+  },
+  "Atlanta Falcons": {
+    "pos": "D",
+    "val": 1.9,
+    "proj_mean": 6.2,
+    "ownership": 0.049,
+    "rank": 17
+  },
+  "Kansas City Chiefs": {
+    "pos": "D",
+    "val": 1.9,
+    "proj_mean": 5.2,
+    "ownership": 0.019,
+    "rank": 18
+  },
+  "Philadelphia Eagles": {
+    "pos": "D",
+    "val": 1.9,
+    "proj_mean": 6.4,
+    "ownership": 0.0152,
+    "rank": 19
+  },
+  "Washington Commanders": {
+    "pos": "D",
+    "val": 1.9,
+    "proj_mean": 5.6,
+    "ownership": 0.011,
+    "rank": 20
+  },
+  "San Francisco 49ers": {
+    "pos": "D",
+    "val": 1.9,
+    "proj_mean": 5.7,
+    "ownership": 0.0098,
+    "rank": 21
+  },
+  "New Orleans Saints": {
+    "pos": "D",
+    "val": 1.4,
+    "proj_mean": 3.8,
+    "ownership": 0.067,
+    "rank": 22
+  }
+}

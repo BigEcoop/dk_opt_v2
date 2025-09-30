@@ -479,9 +479,93 @@ if __name__ == "__main__":
         }
         rows.append(row)
 
-    pd.DataFrame(rows).to_excel(sims_dir / "player_summary.xlsx", index=False)
-    print(f"Wrote {PLAYER_SUMMARY} & cleaned player_summary.xlsx")
+             # ── Write player summary with template & positional tabs ──────────────────
+    from openpyxl import load_workbook
+    from openpyxl.utils.dataframe import dataframe_to_rows
 
+    template_path = PROJECT_ROOT / "src" / "data" / "templates" / "player_summary_template.xlsx"
+    wb_ps = load_workbook(template_path)
+
+    # build master DataFrame
+    df_all = pd.DataFrame(rows)
+
+    # 1) “All” sheet: ascending by team
+    ws_all = wb_ps.worksheets[0]
+    # clear old data from row 2 onward
+    for row in ws_all.iter_rows(min_row=2, max_col=len(df_all.columns), max_row=ws_all.max_row):
+        for cell in row:
+            cell.value = None
+
+    df_all = df_all.sort_values(by="team", ascending=True)
+    # write headers
+    for c_idx, col in enumerate(df_all.columns, start=1):
+        ws_all.cell(row=1, column=c_idx, value=col)
+    # write data
+    for r_idx, row in enumerate(dataframe_to_rows(df_all, index=False, header=False), start=2):
+        for c_idx, val in enumerate(row, start=1):
+            ws_all.cell(row=r_idx, column=c_idx, value=val)
+
+    # 2) Positional sheets: create if missing, then populate
+    pos_defs = {
+        "QB": ("passing_yds_mean", [
+            "player","team","pos","total_tds",
+            "passing_yds_mean","passing_yds_ceiling","passing_tds_mean",
+            "pass_attempts_mean","completions_mean",
+            "rushing_yds_mean","rushing_tds_mean",
+            "dk_points_mean","dk_points_ceiling"
+        ]),
+        "RB": ("rushing_yds_mean", [
+            "player","team","pos","total_tds","total_yds_mean",
+            "rushing_yds_mean","rushing_yds_ceiling","rushing_tds_mean",
+            "receiving_targets_mean","receptions_mean",
+            "receiving_yds_mean","receiving_tds_mean",
+            "dk_points_mean","dk_points_ceiling"
+        ]),
+        "WR": ("receiving_yds_mean", [
+            "player","team","pos","total_tds","total_yds_mean",
+            "receiving_targets_mean","receptions_mean",
+            "receiving_yds_mean","receiving_tds_mean",
+            "rushing_yds_mean","rushing_tds_mean",
+            "dk_points_mean","dk_points_ceiling"
+        ]),
+        "TE": ("receiving_yds_mean", [
+            "player","team","pos","total_tds","total_yds_mean",
+            "receiving_targets_mean","receptions_mean",
+            "receiving_yds_mean","receiving_tds_mean",
+            "rushing_yds_mean","rushing_tds_mean",
+            "dk_points_mean","dk_points_ceiling"
+        ])
+    }
+
+    for sheet_name, (sort_col, cols) in pos_defs.items():
+        # create sheet if it doesn't exist
+        if sheet_name in wb_ps.sheetnames:
+            ws = wb_ps[sheet_name]
+        else:
+            ws = wb_ps.create_sheet(sheet_name)
+
+        # clear out old data
+        for row in ws.iter_rows(min_row=2, max_col=len(cols), max_row=ws.max_row):
+            for cell in row:
+                cell.value = None
+
+        # filter & sort
+        df_pos = df_all[df_all["pos"].str.upper() == sheet_name][cols]
+        df_pos = df_pos.sort_values(by=sort_col, ascending=False)
+
+        # write headers
+        for c_idx, col in enumerate(cols, start=1):
+            ws.cell(row=1, column=c_idx, value=col)
+        # write rows
+        for r_idx, row in enumerate(dataframe_to_rows(df_pos, index=False, header=False), start=2):
+            for c_idx, val in enumerate(row, start=1):
+                ws.cell(row=r_idx, column=c_idx, value=val)
+
+    # save final workbook
+    out_path = sims_dir / "player_summary.xlsx"
+    wb_ps.save(out_path)
+    print(f"Wrote templated player_summary.xlsx to {out_path}")
+    
     # Betting CSV & XLSX
     header = [
         "type","home","away",
@@ -515,7 +599,7 @@ from copy import copy
 
 if TRACKING_FILE.exists():
     wb        = load_workbook(TRACKING_FILE)
-    template  = wb["template"]               # your formatted template sheet
+    template  = wb["template"]
     sheet_name = f"{args.year}_w{args.week}"
     if sheet_name in wb.sheetnames:
         wb.remove(wb[sheet_name])
@@ -525,22 +609,68 @@ if TRACKING_FILE.exists():
 
     df_bet = pd.read_csv(sims_dir / "betting.csv")
 
-        # place each game row every 4 rows, starting at row 2
+    # place each game row every 4 rows, starting at row 2,
+    # skip the first column (“type”), and start writing in column 2
     for idx, data_row in enumerate(dataframe_to_rows(df_bet, index=False, header=False)):
         target_row = 2 + idx * 4
-        for col_idx, val in enumerate(data_row, start=1):
+        for col_idx, val in enumerate(data_row[1:], start=2):
             dest_cell = new_ws.cell(row=target_row, column=col_idx)
-                
+
             # write the new value
             dest_cell.value = val
 
-                # copy style from the same cell in the template sheet
+            # copy style from the same cell in the template sheet
             tmpl_cell      = template.cell(row=target_row, column=col_idx)
             dest_cell.fill = copy(tmpl_cell.fill)
             dest_cell.font = copy(tmpl_cell.font)
             dest_cell.border = copy(tmpl_cell.border)
             dest_cell.alignment = copy(tmpl_cell.alignment)
-            dest_cell.number_format = tmpl_cell.number_format
 
-        wb.save(TRACKING_FILE)
-        print(f"Appended week {args.week} to {TRACKING_FILE} with template styling preserved")
+            # force percent format for both win probabilities (cols 4 and 5)
+            if col_idx in (4, 5):
+                dest_cell.number_format = "0.00%"
+            else:
+                dest_cell.number_format = tmpl_cell.number_format
+
+    wb.save(TRACKING_FILE)
+    print(f"Appended week {args.week} to {TRACKING_FILE} with template styling preserved")
+    # ── Append to tracking workbook using sheet copy as a template ───────────────
+from copy import copy
+
+if TRACKING_FILE.exists():
+    wb        = load_workbook(TRACKING_FILE)
+    template  = wb["template"]
+    sheet_name = f"{args.year}_w{args.week}"
+    if sheet_name in wb.sheetnames:
+        wb.remove(wb[sheet_name])
+
+    new_ws = wb.copy_worksheet(template)
+    new_ws.title = sheet_name
+
+    df_bet = pd.read_csv(sims_dir / "betting.csv")
+
+    # place each game row every 5 rows, starting at row 2,
+    # skip the first column (“type”), and start writing in column 2
+    for idx, data_row in enumerate(dataframe_to_rows(df_bet, index=False, header=False)):
+        target_row = 2 + idx * 5
+        for col_idx, val in enumerate(data_row[1:], start=2):
+            dest_cell = new_ws.cell(row=target_row, column=col_idx)
+
+            # write the new value
+            dest_cell.value = val
+
+            # copy style from the same cell in the template sheet
+            tmpl_cell      = template.cell(row=target_row, column=col_idx)
+            dest_cell.fill = copy(tmpl_cell.fill)
+            dest_cell.font = copy(tmpl_cell.font)
+            dest_cell.border = copy(tmpl_cell.border)
+            dest_cell.alignment = copy(tmpl_cell.alignment)
+
+            # force percent format for both win probabilities (cols 4 and 5)
+            if col_idx in (4, 5):
+                dest_cell.number_format = "0.00%"
+            else:
+                dest_cell.number_format = tmpl_cell.number_format
+
+    wb.save(TRACKING_FILE)
+    print(f"Appended week {args.week} to {TRACKING_FILE} with template styling preserved")

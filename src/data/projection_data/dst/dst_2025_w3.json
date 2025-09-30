@@ -1,0 +1,158 @@
+{
+  "Cincinnati Bengals": {
+    "pos": "D",
+    "val": 2.4,
+    "ownership": 0.096,
+    "rank": 1
+  },
+  "Atlanta Falcons": {
+    "pos": "D",
+    "val": 2.3,
+    "ownership": 0.0767,
+    "rank": 2
+  },
+  "Indianapolis Colts": {
+    "pos": "D",
+    "val": 2.3,
+    "ownership": 0.0634,
+    "rank": 3
+  },
+  "Green Bay Packers": {
+    "pos": "D",
+    "val": 2.2,
+    "ownership": 0.08800000000000001,
+    "rank": 4
+  },
+  "New England Patriots": {
+    "pos": "D",
+    "val": 2.2,
+    "ownership": 0.0784,
+    "rank": 5
+  },
+  "Las Vegas Raiders": {
+    "pos": "D",
+    "val": 2.2,
+    "ownership": 0.075,
+    "rank": 6
+  },
+  "Minnesota Vikings": {
+    "pos": "D",
+    "val": 2.2,
+    "ownership": 0.075,
+    "rank": 7
+  },
+  "Seattle Seahawks": {
+    "pos": "D",
+    "val": 2.2,
+    "ownership": 0.0602,
+    "rank": 8
+  },
+  "Houston Texans": {
+    "pos": "D",
+    "val": 2.2,
+    "ownership": 0.0571,
+    "rank": 9
+  },
+  "New Orleans Saints": {
+    "pos": "D",
+    "val": 2.2,
+    "ownership": 0.046799999999999994,
+    "rank": 10
+  },
+  "Carolina Panthers": {
+    "pos": "D",
+    "val": 2.1,
+    "ownership": 0.0070999999999999995,
+    "rank": 11
+  },
+  "Pittsburgh Steelers": {
+    "pos": "D",
+    "val": 2.1,
+    "ownership": 0.0169,
+    "rank": 12
+  },
+  "Jacksonville Jaguars": {
+    "pos": "D",
+    "val": 2.1,
+    "ownership": 0.018000000000000002,
+    "rank": 13
+  },
+  "New York Jets": {
+    "pos": "D",
+    "val": 2.1,
+    "ownership": 0.0241,
+    "rank": 14
+  },
+  "Tampa Bay Buccaneers": {
+    "pos": "D",
+    "val": 2.1,
+    "ownership": 0.0321,
+    "rank": 15
+  },
+  "Los Angeles Rams": {
+    "pos": "D",
+    "val": 2.1,
+    "ownership": 0.0377,
+    "rank": 16
+  },
+  "Cleveland Browns": {
+    "pos": "D",
+    "val": 2.1,
+    "ownership": 0.085,
+    "rank": 17
+  },
+  "Tennessee Titans": {
+    "pos": "D",
+    "val": 2.0,
+    "ownership": 0.0168,
+    "rank": 18
+  },
+  "Philadelphia Eagles": {
+    "pos": "D",
+    "val": 2.0,
+    "ownership": 0.008199999999999999,
+    "rank": 19
+  },
+  "Dallas Cowboys": {
+    "pos": "D",
+    "val": 2.0,
+    "ownership": 0.0054,
+    "rank": 20
+  },
+  "Chicago Bears": {
+    "pos": "D",
+    "val": 2.0,
+    "ownership": 0.0038,
+    "rank": 21
+  },
+  "Arizona Cardinals": {
+    "pos": "D",
+    "val": 2.0,
+    "ownership": 0.0026,
+    "rank": 22
+  },
+  "Washington Commanders": {
+    "pos": "D",
+    "val": 2.0,
+    "ownership": 0.0011,
+    "rank": 23
+  },
+  "Los Angeles Chargers": {
+    "pos": "D",
+    "val": 2.0,
+    "ownership": 0.0006,
+    "rank": 24
+  },
+  "San Francisco 49ers": {
+    "pos": "D",
+    "val": 1.9,
+    "ownership": 0.0012,
+    "rank": 25
+  },
+  "Denver Broncos": {
+    "pos": "D",
+    "val": 1.8,
+    "ownership": 0.0006,
+    "rank": 26
+  }
+}
