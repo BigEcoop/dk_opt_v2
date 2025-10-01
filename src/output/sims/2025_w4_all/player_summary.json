@@ -68,7 +68,8 @@
       "mean": 23.05323805230989,
       "ceiling": 63.89947788347078
     },
-    "total_tds": 0.62544
+    "total_tds": 0.62544,
+    "dk_id": 40142394
   },
   "James Cook": {
     "id": "CookJa05",
@@ -139,7 +140,8 @@
       "mean": 18.347995112455706,
       "ceiling": 59.28048417271951
     },
-    "total_tds": 0.91416
+    "total_tds": 0.91416,
+    "dk_id": 40142482
   },
   "Ty Johnson": {
     "id": "JohnTy00",
@@ -210,7 +212,8 @@
       "mean": 2.063325374031412,
       "ceiling": 21.118847414100017
     },
-    "total_tds": 0.09296
+    "total_tds": 0.09296,
+    "dk_id": 40142696
   },
   "Ray Davis": {
     "id": "DaviRa02",
@@ -281,7 +284,8 @@
       "mean": 3.3811546879127685,
       "ceiling": 26.659791450724157
     },
-    "total_tds": 0.11273
+    "total_tds": 0.11273,
+    "dk_id": 40142568
   },
   "Dalton Kincaid": {
     "id": "KincDa00",
@@ -352,7 +356,8 @@
       "mean": 10.12161324429163,
       "ceiling": 41.15435316953871
     },
-    "total_tds": 0.31738
+    "total_tds": 0.31738,
+    "dk_id": 40143140
   },
   "Dawson Knox": {
     "id": "KnoxDa00",
@@ -423,7 +428,8 @@
       "mean": 4.159141325152432,
       "ceiling": 23.750548429345024
     },
-    "total_tds": 0.14152
+    "total_tds": 0.14152,
+    "dk_id": 40143212
   },
   "Jackson Hawes": {
     "id": "HaweJa00",
@@ -494,7 +500,8 @@
       "mean": 1.1787666166205264,
       "ceiling": 15.719981897446896
     },
-    "total_tds": 0.01443
+    "total_tds": 0.01443,
+    "dk_id": 40143342
   },
   "Khalil Shakir": {
     "id": "ShakKh00",
@@ -565,7 +572,8 @@
       "mean": 11.569641679145997,
       "ceiling": 40.33467959745817
     },
-    "total_tds": 0.36848
+    "total_tds": 0.36848,
+    "dk_id": 40142766
   },
   "Keon Coleman": {
     "id": "ColeKe01",
@@ -636,7 +644,8 @@
       "mean": 10.496205941173525,
       "ceiling": 36.06639224495271
     },
-    "total_tds": 0.28539
+    "total_tds": 0.28539,
+    "dk_id": 40142754
   },
   "Joshua Palmer": {
     "id": "PalmJo01",
@@ -707,7 +716,8 @@
       "mean": 9.076152214843544,
       "ceiling": 40.029119572536516
     },
-    "total_tds": 0.28777
+    "total_tds": 0.28777,
+    "dk_id": 40142804
   },
   "Elijah Moore": {
     "id": "MoorEl00",
@@ -778,7 +788,8 @@
       "mean": 2.657118943105657,
       "ceiling": 21.272387835622137
     },
-    "total_tds": 0.06029
+    "total_tds": 0.06029,
+    "dk_id": 40142840
   },
   "Tyrell Shavers": {
     "id": "ShavTy00",
@@ -849,7 +860,8 @@
       "mean": 1.2805594715149802,
       "ceiling": 6.087522388541565
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40143104
   },
   "Justin Herbert": {
     "id": "HerbJu00",
@@ -920,7 +932,8 @@
       "mean": 18.834940159689566,
       "ceiling": 66.64003097528636
     },
-    "total_tds": 0.18794
+    "total_tds": 0.18794,
+    "dk_id": 40142400
   },
   "Omarion Hampton": {
     "id": "HampOm00",
@@ -991,7 +1004,8 @@
       "mean": 15.057716511684236,
       "ceiling": 50.555767167494345
     },
-    "total_tds": 0.68873
+    "total_tds": 0.68873,
+    "dk_id": 40142494
   },
   "Hassan Haskins": {
     "id": "HaskHa00",
@@ -1062,7 +1076,8 @@
       "mean": 3.756697988880536,
       "ceiling": 26.63679059986819
     },
-    "total_tds": 0.18151
+    "total_tds": 0.18151,
+    "dk_id": 40142544
   },
   "Oronde Gadsden": {
     "id": "GadsOr01",
@@ -1133,7 +1148,8 @@
       "mean": 4.633120814515038,
       "ceiling": 24.004524324943826
     },
-    "total_tds": 0.07209
+    "total_tds": 0.07209,
+    "dk_id": 40143204
   },
   "Tyler Conklin": {
     "id": "ConkTy00",
@@ -1204,7 +1220,8 @@
       "mean": 2.9214948813090853,
       "ceiling": 21.324746558206513
     },
-    "total_tds": 0.0712
+    "total_tds": 0.0712,
+    "dk_id": 40143192
   },
   "Tucker Fisk": {
     "id": "FiskTu00",
@@ -1275,7 +1292,8 @@
       "mean": 0.9515996408594612,
       "ceiling": 13.447067947827538
     },
-    "total_tds": 0.01437
+    "total_tds": 0.01437,
+    "dk_id": 40143282
   },
   "Ladd McConkey": {
     "id": "McCoLa00",
@@ -1346,7 +1364,8 @@
       "mean": 14.732772596874634,
       "ceiling": 45.924514188839225
     },
-    "total_tds": 0.44118
+    "total_tds": 0.44118,
+    "dk_id": 40142730
   },
   "Quentin Johnston": {
     "id": "JohnQu01",
@@ -1417,7 +1436,8 @@
       "mean": 13.565264778127041,
       "ceiling": 42.91864495516315
     },
-    "total_tds": 0.44324
+    "total_tds": 0.44324,
+    "dk_id": 40142760
   },
   "Keenan Allen": {
     "id": "AlleKe00",
@@ -1488,7 +1508,8 @@
       "mean": 14.268399166551687,
       "ceiling": 45.41773451462344
     },
-    "total_tds": 0.44019
+    "total_tds": 0.44019,
+    "dk_id": 40142768
   },
   "Tre' Harris": {
     "id": "HarrTr03",
@@ -1559,7 +1580,8 @@
       "mean": 3.1543631130215535,
       "ceiling": 22.409691683502604
     },
-    "total_tds": 0.05708
+    "total_tds": 0.05708,
+    "dk_id": 40142996
   },
   "Keandre Lambert-Smith": {
     "id": "LambKe00",
@@ -1630,7 +1652,8 @@
       "mean": 0.6183834716130129,
       "ceiling": 4.400585235371363
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40143000
   },
   "Derius Davis": {
     "id": "DaviDe01",
@@ -1701,7 +1724,8 @@
       "mean": 0.31979689208060674,
       "ceiling": 3.478777380038792
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40142998
   },
   "Lamar Jackson": {
     "id": "JackLa00",
@@ -1772,7 +1796,8 @@
       "mean": 20.729280821707356,
       "ceiling": 58.86611333512466
     },
-    "total_tds": 0.31098
+    "total_tds": 0.31098,
+    "dk_id": 40142395
   },
   "Derrick Henry": {
     "id": "HenrDe00",
@@ -1843,7 +1868,8 @@
       "mean": 13.913510438739817,
       "ceiling": 52.56677904566453
     },
-    "total_tds": 0.76955
+    "total_tds": 0.76955,
+    "dk_id": 40142480
   },
   "Justice Hill": {
     "id": "HillJu00",
@@ -1914,7 +1940,8 @@
       "mean": 6.055177914944888,
       "ceiling": 31.13561974573606
     },
-    "total_tds": 0.17308
+    "total_tds": 0.17308,
+    "dk_id": 40142528
   },
   "Mark Andrews": {
     "id": "AndrMa00",
@@ -1985,7 +2012,8 @@
       "mean": 9.409894055009156,
       "ceiling": 43.943033941926174
     },
-    "total_tds": 0.38775
+    "total_tds": 0.38775,
+    "dk_id": 40143144
   },
   "Isaiah Likely": {
     "id": "LikeIs00",
@@ -2056,7 +2084,8 @@
       "mean": 6.4941953823865495,
       "ceiling": 35.49400720339443
     },
-    "total_tds": 0.22721
+    "total_tds": 0.22721,
+    "dk_id": 40143164
   },
   "Zay Flowers": {
     "id": "FlowZa00",
@@ -2127,7 +2156,8 @@
       "mean": 14.704314447375635,
       "ceiling": 46.363136160268965
     },
-    "total_tds": 0.39849
+    "total_tds": 0.39849,
+    "dk_id": 40142726
   },
   "Rashod Bateman": {
     "id": "BateRa00",
@@ -2198,7 +2228,8 @@
       "mean": 8.22689964453052,
       "ceiling": 31.85145925866742
     },
-    "total_tds": 0.217
+    "total_tds": 0.217,
+    "dk_id": 40142784
   },
   "DeAndre Hopkins": {
     "id": "HopkDe00",
@@ -2269,7 +2300,8 @@
       "mean": 4.8550278000546365,
       "ceiling": 30.004630129069906
     },
-    "total_tds": 0.19839
+    "total_tds": 0.19839,
+    "dk_id": 40142794
   },
   "Devontez Walker": {
     "id": "WalkDe01",
@@ -2340,7 +2372,8 @@
       "mean": 1.7219360697628752,
       "ceiling": 19.959922170672176
     },
-    "total_tds": 0.07027
+    "total_tds": 0.07027,
+    "dk_id": 40142856
   },
   "Tylan Wallace": {
     "id": "WallTy00",
@@ -2411,7 +2444,8 @@
       "mean": 2.064727385092933,
       "ceiling": 20.70504763216737
     },
-    "total_tds": 0.04995
+    "total_tds": 0.04995,
+    "dk_id": 40142876
   },
   "Jalen Hurts": {
     "id": "HurtJa00",
@@ -2482,7 +2516,8 @@
       "mean": 19.14231777716003,
       "ceiling": 59.81016402919077
     },
-    "total_tds": 0.69863
+    "total_tds": 0.69863,
+    "dk_id": 40142397
   },
   "Saquon Barkley": {
     "id": "BarkSa00",
@@ -2553,7 +2588,8 @@
       "mean": 17.950490914960312,
       "ceiling": 67.41647328989788
     },
-    "total_tds": 0.7226699999999999
+    "total_tds": 0.7226699999999999,
+    "dk_id": 40142476
   },
   "A.J. Dillon": {
     "id": "DillA.00",
@@ -2624,7 +2660,8 @@
       "mean": 1.9216049300865967,
       "ceiling": 15.447358301819259
     },
-    "total_tds": 0.02482
+    "total_tds": 0.02482,
+    "dk_id": 40142632
   },
   "Dallas Goedert": {
     "id": "GoedDa00",
@@ -2695,7 +2732,8 @@
       "mean": 10.264629395336673,
       "ceiling": 35.53976704348949
     },
-    "total_tds": 0.28402
+    "total_tds": 0.28402,
+    "dk_id": 40143152
   },
   "Grant Calcaterra": {
     "id": "CalcGr00",
@@ -2766,7 +2804,8 @@
       "mean": 1.2702722107923419,
       "ceiling": 5.166938115639801
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40143208
   },
   "A.J. Brown": {
     "id": "BrowAJ00",
@@ -2837,7 +2876,8 @@
       "mean": 15.63029886001104,
       "ceiling": 51.45148725156494
     },
-    "total_tds": 0.48579
+    "total_tds": 0.48579,
+    "dk_id": 40142732
   },
   "DeVonta Smith": {
     "id": "SmitDe04",
@@ -2908,7 +2948,8 @@
       "mean": 12.888877593165008,
       "ceiling": 41.50701149499663
     },
-    "total_tds": 0.32437
+    "total_tds": 0.32437,
+    "dk_id": 40142764
   },
   "Jahan Dotson": {
     "id": "DotsJa00",
@@ -2979,7 +3020,8 @@
       "mean": 3.8865169768775454,
       "ceiling": 21.137625212985498
     },
-    "total_tds": 0.07561
+    "total_tds": 0.07561,
+    "dk_id": 40142854
   },
   "John Metchie III": {
     "id": "MetcJo00",
@@ -3050,7 +3092,8 @@
       "mean": 1.0183183524860626,
       "ceiling": 5.730714125506028
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40142986
   },
   "Drake Maye": {
     "id": "MayeDr00",
@@ -3121,7 +3164,8 @@
       "mean": 19.030380435428473,
       "ceiling": 56.214768234249966
     },
-    "total_tds": 0.22991
+    "total_tds": 0.22991,
+    "dk_id": 40142406
   },
   "TreVeyon Henderson": {
     "id": "HendTr00",
@@ -3192,7 +3236,8 @@
       "mean": 11.05239510700169,
       "ceiling": 44.80908245187431
     },
-    "total_tds": 0.42012
+    "total_tds": 0.42012,
+    "dk_id": 40142510
   },
   "Rhamondre Stevenson": {
     "id": "StevRh00",
@@ -3263,7 +3308,8 @@
       "mean": 10.21514963755957,
       "ceiling": 42.50087999451577
     },
-    "total_tds": 0.37773
+    "total_tds": 0.37773,
+    "dk_id": 40142514
   },
   "Antonio Gibson": {
     "id": "GibsAn00",
@@ -3334,7 +3380,8 @@
       "mean": 4.068960314450112,
       "ceiling": 22.824529894719436
     },
-    "total_tds": 0.13028
+    "total_tds": 0.13028,
+    "dk_id": 40142532
   },
   "Hunter Henry": {
     "id": "HenrHu00",
@@ -3405,7 +3452,8 @@
       "mean": 12.261862375014388,
       "ceiling": 41.4631624459628
     },
-    "total_tds": 0.3828
+    "total_tds": 0.3828,
+    "dk_id": 40143150
   },
   "Austin Hooper": {
     "id": "HoopAu00",
@@ -3476,7 +3524,8 @@
       "mean": 4.360605516550057,
       "ceiling": 23.96911020763804
     },
-    "total_tds": 0.10018
+    "total_tds": 0.10018,
+    "dk_id": 40143180
   },
   "Kayshon Boutte": {
     "id": "BoutKa00",
@@ -3547,7 +3596,8 @@
       "mean": 9.599404214771607,
       "ceiling": 41.00776537121837
     },
-    "total_tds": 0.2452
+    "total_tds": 0.2452,
+    "dk_id": 40142802
   },
   "Stefon Diggs": {
     "id": "DiggSt00",
@@ -3618,7 +3668,8 @@
       "mean": 10.162715922182576,
       "ceiling": 33.345189070184205
     },
-    "total_tds": 0.24498
+    "total_tds": 0.24498,
+    "dk_id": 40142796
   },
   "Mack Hollins": {
     "id": "HollMa00",
@@ -3689,7 +3740,8 @@
       "mean": 5.109754218325773,
       "ceiling": 26.207428283420146
     },
-    "total_tds": 0.19782
+    "total_tds": 0.19782,
+    "dk_id": 40142862
   },
   "DeMario Douglas": {
     "id": "DougDe00",
@@ -3760,7 +3812,8 @@
       "mean": 5.40851396415679,
       "ceiling": 27.010651030854376
     },
-    "total_tds": 0.11715
+    "total_tds": 0.11715,
+    "dk_id": 40142824
   },
   "Kyle Williams": {
     "id": "WillKy01",
@@ -3831,7 +3884,8 @@
       "mean": 2.72106300770227,
       "ceiling": 19.098753280929465
     },
-    "total_tds": 0.04955
+    "total_tds": 0.04955,
+    "dk_id": 40142888
   },
   "Caleb Williams": {
     "id": "WillCa01",
@@ -3902,7 +3956,8 @@
       "mean": 18.67794844928317,
       "ceiling": 56.48753910865032
     },
-    "total_tds": 0.19833
+    "total_tds": 0.19833,
+    "dk_id": 40142404
   },
   "D&apos;Andre Swift": {
     "id": "SwifDA00",
@@ -3973,7 +4028,8 @@
       "mean": 15.690221625685133,
       "ceiling": 49.6777835820417
     },
-    "total_tds": 0.55036
+    "total_tds": 0.55036,
+    "dk_id": 40142506
   },
   "Kyle Monangai": {
     "id": "MonaKy00",
@@ -4044,7 +4100,8 @@
       "mean": 6.221709534764372,
       "ceiling": 30.987253283832008
     },
-    "total_tds": 0.26355
+    "total_tds": 0.26355,
+    "dk_id": 40142712
   },
   "Roschon Johnson": {
     "id": "JohnRo07",
@@ -4115,7 +4172,8 @@
       "mean": 1.4921501113973328,
       "ceiling": 18.250260611009104
     },
-    "total_tds": 0.0635
+    "total_tds": 0.0635,
+    "dk_id": 40142574
   },
   "Cole Kmet": {
     "id": "KmetCo00",
@@ -4186,7 +4244,8 @@
       "mean": 6.665491994933993,
       "ceiling": 30.125724417839113
     },
-    "total_tds": 0.17432
+    "total_tds": 0.17432,
+    "dk_id": 40143178
   },
   "Durham Smythe": {
     "id": "SmytDu00",
@@ -4257,7 +4316,8 @@
       "mean": 0.9083653974471002,
       "ceiling": 13.51714558622601
     },
-    "total_tds": 0.01482
+    "total_tds": 0.01482,
+    "dk_id": 40143220
   },
   "Rome Odunze": {
     "id": "OdunRo00",
@@ -4328,7 +4388,8 @@
       "mean": 15.952569101664864,
       "ceiling": 56.432933170878215
     },
-    "total_tds": 0.58699
+    "total_tds": 0.58699,
+    "dk_id": 40142734
   },
   "DJ Moore": {
     "id": "MoorDJ00",
@@ -4399,7 +4460,8 @@
       "mean": 11.945828034052983,
       "ceiling": 45.5365382066669
     },
-    "total_tds": 0.3387
+    "total_tds": 0.3387,
+    "dk_id": 40142756
   },
   "Olamide Zaccheaus": {
     "id": "ZaccOl00",
@@ -4470,7 +4532,8 @@
       "mean": 6.476600454252775,
       "ceiling": 43.32854074725464
     },
-    "total_tds": 0.17545
+    "total_tds": 0.17545,
+    "dk_id": 40142844
   },
   "Luther Burden III": {
     "id": "BurdLu00",
@@ -4541,7 +4604,8 @@
       "mean": 5.216071953687215,
       "ceiling": 24.228355641024667
     },
-    "total_tds": 0.14724
+    "total_tds": 0.14724,
+    "dk_id": 40142788
   },
   "Brock Purdy": {
     "id": "PurdBr00",
@@ -4612,7 +4676,8 @@
       "mean": 18.16674652294016,
       "ceiling": 54.78558251045697
     },
-    "total_tds": 0.17393
+    "total_tds": 0.17393,
+    "dk_id": 40142401
   },
   "Christian McCaffrey": {
     "id": "McCaCh00",
@@ -4683,7 +4748,8 @@
       "mean": 24.73235785570163,
       "ceiling": 62.64627871779107
     },
-    "total_tds": 0.94348
+    "total_tds": 0.94348,
+    "dk_id": 40142470
   },
   "Brian Robinson Jr": {
     "id": "RobiBr01",
@@ -4754,7 +4820,8 @@
       "mean": 4.866681470400399,
       "ceiling": 29.876036181956557
     },
-    "total_tds": 0.18942
+    "total_tds": 0.18942,
+    "dk_id": 40142536
   },
   "Kyle Juszczyk": {
     "id": "JuszKy00",
@@ -4825,7 +4892,8 @@
       "mean": 2.3809146477816103,
       "ceiling": 21.33591533916558
     },
-    "total_tds": 0.08531
+    "total_tds": 0.08531,
+    "dk_id": 40142612
   },
   "Jake Tonges": {
     "id": "TongJa00",
@@ -4896,7 +4964,8 @@
       "mean": 3.8550544795507946,
       "ceiling": 27.981622072229516
     },
-    "total_tds": 0.126
+    "total_tds": 0.126,
+    "dk_id": 40143174
   },
   "Luke Farrell": {
     "id": "FarrLu00",
@@ -4967,7 +5036,8 @@
       "mean": 2.1686485176377683,
       "ceiling": 21.15074637709006
     },
-    "total_tds": 0.07623
+    "total_tds": 0.07623,
+    "dk_id": 40143176
   },
   "Ricky Pearsall": {
     "id": "PearRi00",
@@ -5038,7 +5108,8 @@
       "mean": 16.734696132717417,
       "ceiling": 55.47508129531282
     },
-    "total_tds": 0.53072
+    "total_tds": 0.53072,
+    "dk_id": 40142752
   },
   "Jauan Jennings": {
     "id": "JennJa00",
@@ -5109,7 +5180,8 @@
       "mean": 11.613624668796861,
       "ceiling": 36.61289962785291
     },
-    "total_tds": 0.29208
+    "total_tds": 0.29208,
+    "dk_id": 40142776
   },
   "Demarcus Robinson": {
     "id": "RobiDe01",
@@ -5180,7 +5252,8 @@
       "mean": 7.088549645416977,
       "ceiling": 37.26328283709842
     },
-    "total_tds": 0.32562
+    "total_tds": 0.32562,
+    "dk_id": 40142848
   },
   "Kendrick Bourne": {
     "id": "BourKe00",
@@ -5251,7 +5324,8 @@
       "mean": 3.4466947558351437,
       "ceiling": 27.059092155979567
     },
-    "total_tds": 0.06133
+    "total_tds": 0.06133,
+    "dk_id": 40142830
   },
   "Patrick Mahomes II": {
     "id": "MahoPa00",
@@ -5322,7 +5396,8 @@
       "mean": 20.165969593787775,
       "ceiling": 58.66801472500893
     },
-    "total_tds": 0.22439
+    "total_tds": 0.22439,
+    "dk_id": 40142402
   },
   "Isiah Pacheco": {
     "id": "PachIs00",
@@ -5393,7 +5468,8 @@
       "mean": 8.924429638928054,
       "ceiling": 37.833325532914664
     },
-    "total_tds": 0.29984
+    "total_tds": 0.29984,
+    "dk_id": 40142516
   },
   "Kareem Hunt": {
     "id": "HuntKa00",
@@ -5464,7 +5540,8 @@
       "mean": 8.064992857343496,
       "ceiling": 32.4200969079692
     },
-    "total_tds": 0.32272
+    "total_tds": 0.32272,
+    "dk_id": 40142526
   },
   "Brashard Smith": {
     "id": "SmitBr00",
@@ -5535,7 +5612,8 @@
       "mean": 2.624366354253615,
       "ceiling": 24.979309416652676
     },
-    "total_tds": 0.11884
+    "total_tds": 0.11884,
+    "dk_id": 40142590
   },
   "Travis Kelce": {
     "id": "KelcTr00",
@@ -5606,7 +5684,8 @@
       "mean": 12.570185899786164,
       "ceiling": 47.522721117699305
     },
-    "total_tds": 0.36257
+    "total_tds": 0.36257,
+    "dk_id": 40143136
   },
   "Noah Gray": {
     "id": "GrayNo00",
@@ -5677,7 +5756,8 @@
       "mean": 4.504635957439297,
       "ceiling": 23.769386341270238
     },
-    "total_tds": 0.12012
+    "total_tds": 0.12012,
+    "dk_id": 40143194
   },
   "Marquise Brown": {
     "id": "BrowMa05",
@@ -5748,7 +5828,8 @@
       "mean": 11.9669462974411,
       "ceiling": 42.58226050960748
     },
-    "total_tds": 0.36474
+    "total_tds": 0.36474,
+    "dk_id": 40142770
   },
   "Tyquan Thornton": {
     "id": "ThorTy00",
@@ -5819,7 +5900,8 @@
       "mean": 9.028377559156027,
       "ceiling": 39.52128974585274
     },
-    "total_tds": 0.30635
+    "total_tds": 0.30635,
+    "dk_id": 40142816
   },
   "JuJu Smith-Schuster": {
     "id": "SmitJu00",
@@ -5890,7 +5972,8 @@
       "mean": 6.56544491178454,
       "ceiling": 29.862612166807665
     },
-    "total_tds": 0.09369
+    "total_tds": 0.09369,
+    "dk_id": 40142828
   },
   "Xavier Worthy": {
     "id": "WortXa00",
@@ -5961,7 +6044,8 @@
       "mean": 8.501166289024185,
       "ceiling": 34.25676402792498
     },
-    "total_tds": 0.23649
+    "total_tds": 0.23649,
+    "dk_id": 40142748
   },
   "Geno Smith": {
     "id": "SmitGe01",
@@ -6032,7 +6116,8 @@
       "mean": 19.063509381706115,
       "ceiling": 53.052686204415494
     },
-    "total_tds": 0.10261
+    "total_tds": 0.10261,
+    "dk_id": 40142407
   },
   "Ashton Jeanty": {
     "id": "JeanAs00",
@@ -6103,7 +6188,8 @@
       "mean": 15.626369769899316,
       "ceiling": 52.86766707686544
     },
-    "total_tds": 0.7234400000000001
+    "total_tds": 0.7234400000000001,
+    "dk_id": 40142488
   },
   "Zamir White": {
     "id": "WhitZa00",
@@ -6174,7 +6260,8 @@
       "mean": 4.45790797625876,
       "ceiling": 28.648015763264603
     },
-    "total_tds": 0.18001
+    "total_tds": 0.18001,
+    "dk_id": 40142556
   },
   "Dylan Laube": {
     "id": "LaubDy00",
@@ -6245,7 +6332,8 @@
       "mean": 1.3190242280188056,
       "ceiling": 5.685148409852048
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40142570
   },
   "Brock Bowers": {
     "id": "BoweBr00",
@@ -6316,7 +6404,8 @@
       "mean": 15.3183136735933,
       "ceiling": 46.6423010431939
     },
-    "total_tds": 0.43953
+    "total_tds": 0.43953,
+    "dk_id": 40143134
   },
   "Jakobi Meyers": {
     "id": "MeyeJa00",
@@ -6387,7 +6476,8 @@
       "mean": 16.605488477913124,
       "ceiling": 51.04128745458177
     },
-    "total_tds": 0.38793
+    "total_tds": 0.38793,
+    "dk_id": 40142762
   },
   "Tre Tucker": {
     "id": "TuckTr00",
@@ -6458,7 +6548,8 @@
       "mean": 11.529698648687264,
       "ceiling": 41.035079584425425
     },
-    "total_tds": 0.3911
+    "total_tds": 0.3911,
+    "dk_id": 40142808
   },
   "Dont'e Thornton Jr.": {
     "id": "ThorDo00",
@@ -6529,7 +6620,8 @@
       "mean": 5.460911154421493,
       "ceiling": 30.11652301315718
     },
-    "total_tds": 0.13273
+    "total_tds": 0.13273,
+    "dk_id": 40142818
   },
   "Jack Bech": {
     "id": "BechJa00",
@@ -6600,7 +6692,8 @@
       "mean": 2.389803401890624,
       "ceiling": 21.01540480903939
     },
-    "total_tds": 0.11046
+    "total_tds": 0.11046,
+    "dk_id": 40142838
   },
   "Bo Nix": {
     "id": "NixxBo00",
@@ -6671,7 +6764,8 @@
       "mean": 18.259526067269306,
       "ceiling": 55.24976257230151
     },
-    "total_tds": 0.22454
+    "total_tds": 0.22454,
+    "dk_id": NaN
   },
   "J.K. Dobbins": {
     "id": "DobbJ.00",
@@ -6742,7 +6836,8 @@
       "mean": 15.44929889592919,
       "ceiling": 49.631253824746985
     },
-    "total_tds": 0.68399
+    "total_tds": 0.68399,
+    "dk_id": NaN
   },
   "RJ Harvey": {
     "id": "HarvRj00",
@@ -6813,7 +6908,8 @@
       "mean": 8.414279991998514,
       "ceiling": 42.08385742622846
     },
-    "total_tds": 0.32689
+    "total_tds": 0.32689,
+    "dk_id": NaN
   },
   "Tyler Badie": {
     "id": "BadiTy00",
@@ -6884,7 +6980,8 @@
       "mean": 2.8298854838251906,
       "ceiling": 21.733428489324645
     },
-    "total_tds": 0.07489
+    "total_tds": 0.07489,
+    "dk_id": NaN
   },
   "Evan Engram": {
     "id": "EngrEv00",
@@ -6955,7 +7052,8 @@
       "mean": 7.831161072587786,
       "ceiling": 32.62702471876021
     },
-    "total_tds": 0.2143
+    "total_tds": 0.2143,
+    "dk_id": NaN
   },
   "Adam Trautman": {
     "id": "TrauAd00",
@@ -7026,7 +7124,8 @@
       "mean": 4.201017593066414,
       "ceiling": 27.40514845284609
     },
-    "total_tds": 0.21283
+    "total_tds": 0.21283,
+    "dk_id": NaN
   },
   "Lucas Krull": {
     "id": "KrulLu00",
@@ -7097,7 +7196,8 @@
       "mean": 1.807142489632555,
       "ceiling": 20.46777869236119
     },
-    "total_tds": 0.0591
+    "total_tds": 0.0591,
+    "dk_id": NaN
   },
   "Courtland Sutton": {
     "id": "SuttCo00",
@@ -7168,7 +7268,8 @@
       "mean": 16.457192635187997,
       "ceiling": 52.86160601451558
     },
-    "total_tds": 0.61556
+    "total_tds": 0.61556,
+    "dk_id": NaN
   },
   "Troy Franklin": {
     "id": "FranTr00",
@@ -7239,7 +7340,8 @@
       "mean": 11.705269374475662,
       "ceiling": 42.17772205655234
     },
-    "total_tds": 0.36176
+    "total_tds": 0.36176,
+    "dk_id": NaN
   },
   "Marvin Mims Jr.": {
     "id": "MimsMa00",
@@ -7310,7 +7412,8 @@
       "mean": 6.97101603878689,
       "ceiling": 30.070109532482366
     },
-    "total_tds": 0.17528
+    "total_tds": 0.17528,
+    "dk_id": NaN
   },
   "Pat Bryant": {
     "id": "BryaPa00",
@@ -7381,7 +7484,8 @@
       "mean": 2.0836835531745983,
       "ceiling": 20.56209692016517
     },
-    "total_tds": 0.05817
+    "total_tds": 0.05817,
+    "dk_id": NaN
   },
   "Trent Sherfield Sr.": {
     "id": "SherTr00",
@@ -7452,7 +7556,8 @@
       "mean": 1.3614365811556066,
       "ceiling": 20.74777071943006
     },
-    "total_tds": 0.05865
+    "total_tds": 0.05865,
+    "dk_id": NaN
   },
   "Matthew Stafford": {
     "id": "StafMa00",
@@ -7523,7 +7628,8 @@
       "mean": 16.950400250985087,
       "ceiling": 51.701228379928914
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40142403
   },
   "Kyren Williams": {
     "id": "WillKy02",
@@ -7594,7 +7700,8 @@
       "mean": 15.208251042469774,
       "ceiling": 60.30737765646922
     },
-    "total_tds": 0.7172099999999999
+    "total_tds": 0.7172099999999999,
+    "dk_id": 40142486
   },
   "Blake Corum": {
     "id": "CoruBl00",
@@ -7665,7 +7772,8 @@
       "mean": 5.194450768048482,
       "ceiling": 36.77185271476155
     },
-    "total_tds": 0.21794
+    "total_tds": 0.21794,
+    "dk_id": 40142548
   },
   "Tyler Higbee": {
     "id": "HigbTy01",
@@ -7736,7 +7844,8 @@
       "mean": 4.1447860782704975,
       "ceiling": 33.276787137917914
     },
-    "total_tds": 0.10083
+    "total_tds": 0.10083,
+    "dk_id": 40143190
   },
   "Davis Allen": {
     "id": "AlleDa01",
@@ -7807,7 +7916,8 @@
       "mean": 2.662950133136193,
       "ceiling": 27.019138963264403
     },
-    "total_tds": 0.09888
+    "total_tds": 0.09888,
+    "dk_id": 40143206
   },
   "Colby Parkinson": {
     "id": "ParkCo00",
@@ -7878,7 +7988,8 @@
       "mean": 2.0001929455869942,
       "ceiling": 20.55947508347412
     },
-    "total_tds": 0.10094
+    "total_tds": 0.10094,
+    "dk_id": 40143252
   },
   "Terrance Ferguson": {
     "id": "FergTe00",
@@ -7949,7 +8060,8 @@
       "mean": 0.7877286221851042,
       "ceiling": 4.768795008354045
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40143254
   },
   "Puka Nacua": {
     "id": "NacuPu00",
@@ -8020,7 +8132,8 @@
       "mean": 22.611237048302144,
       "ceiling": 69.34687205860455
     },
-    "total_tds": 0.75753
+    "total_tds": 0.75753,
+    "dk_id": 40142716
   },
   "Davante Adams": {
     "id": "AdamDa01",
@@ -8091,7 +8204,8 @@
       "mean": 17.62621765119472,
       "ceiling": 51.822448967612374
     },
-    "total_tds": 0.67676
+    "total_tds": 0.67676,
+    "dk_id": 40142736
   },
   "Jordan Whittington": {
     "id": "WhitJo04",
@@ -8162,7 +8276,8 @@
       "mean": 5.018747955172856,
       "ceiling": 28.120337314578506
     },
-    "total_tds": 0.15615
+    "total_tds": 0.15615,
+    "dk_id": 40142952
   },
   "Tutu Atwell": {
     "id": "AtweTu00",
@@ -8233,7 +8348,8 @@
       "mean": 3.9851541496203873,
       "ceiling": 26.53727838256276
     },
-    "total_tds": 0.15605
+    "total_tds": 0.15605,
+    "dk_id": 40142886
   },
   "Baker Mayfield": {
     "id": "MayfBa00",
@@ -8304,7 +8420,8 @@
       "mean": 18.97758220531831,
       "ceiling": 52.758640764530924
     },
-    "total_tds": 0.11073
+    "total_tds": 0.11073,
+    "dk_id": 40142398
   },
   "Bucky Irving": {
     "id": "IrviBu00",
@@ -8375,7 +8492,8 @@
       "mean": 18.46779790335888,
       "ceiling": 53.75219913334405
     },
-    "total_tds": 0.54417
+    "total_tds": 0.54417,
+    "dk_id": 40142484
   },
   "Rachaad White": {
     "id": "WhitRa00",
@@ -8446,7 +8564,8 @@
       "mean": 9.03493573602932,
       "ceiling": 36.61013270312779
     },
-    "total_tds": 0.36792
+    "total_tds": 0.36792,
+    "dk_id": 40142522
   },
   "Sean Tucker": {
     "id": "TuckSe00",
@@ -8517,7 +8636,8 @@
       "mean": 1.2295076702134535,
       "ceiling": 19.52287367859061
     },
-    "total_tds": 0.0641
+    "total_tds": 0.0641,
+    "dk_id": 40142628
   },
   "Cade Otton": {
     "id": "OttoCa00",
@@ -8588,7 +8708,8 @@
       "mean": 6.680939388956443,
       "ceiling": 35.80142651392844
     },
-    "total_tds": 0.20043
+    "total_tds": 0.20043,
+    "dk_id": 40143162
   },
   "Payne Durham": {
     "id": "DurhPa00",
@@ -8659,7 +8780,8 @@
       "mean": 1.457329371197768,
       "ceiling": 20.663136739539166
     },
-    "total_tds": 0.06651
+    "total_tds": 0.06651,
+    "dk_id": 40143210
   },
   "Emeka Egbuka": {
     "id": "EgbuEm00",
@@ -8730,7 +8852,8 @@
       "mean": 17.91547038187775,
       "ceiling": 51.880304333566215
     },
-    "total_tds": 0.56202
+    "total_tds": 0.56202,
+    "dk_id": 40142724
   },
   "Chris Godwin": {
     "id": "GodwCh00",
@@ -8801,7 +8924,8 @@
       "mean": 10.063971535899848,
       "ceiling": 35.55515801743079
     },
-    "total_tds": 0.33839
+    "total_tds": 0.33839,
+    "dk_id": 40142742
   },
   "Sterling Shepard": {
     "id": "ShepSt00",
@@ -8872,7 +8996,8 @@
       "mean": 6.450163330263389,
       "ceiling": 29.699180030360584
     },
-    "total_tds": 0.13377
+    "total_tds": 0.13377,
+    "dk_id": 40142814
   },
   "Ryan Miller": {
     "id": "MillRy00",
@@ -8943,7 +9068,8 @@
       "mean": 1.7169236154558845,
       "ceiling": 15.847052628225727
     },
-    "total_tds": 0.05568
+    "total_tds": 0.05568,
+    "dk_id": NaN
   },
   "Tez Johnson": {
     "id": "JohnTe01",
@@ -9014,7 +9140,8 @@
       "mean": 1.7564568362136952,
       "ceiling": 16.233333202277827
     },
-    "total_tds": 0.03381
+    "total_tds": 0.03381,
+    "dk_id": 40142870
   },
   "Justin Fields": {
     "id": "FielJu00",
@@ -9085,7 +9212,8 @@
       "mean": 16.95713463098355,
       "ceiling": 56.00016497151322
     },
-    "total_tds": 0.39838
+    "total_tds": 0.39838,
+    "dk_id": NaN
   },
   "Breece Hall": {
     "id": "HallBr01",
@@ -9156,7 +9284,8 @@
       "mean": 14.915977838738193,
       "ceiling": 53.58857790449758
     },
-    "total_tds": 0.55044
+    "total_tds": 0.55044,
+    "dk_id": NaN
   },
   "Braelon Allen": {
     "id": "AlleBr01",
@@ -9227,7 +9356,8 @@
       "mean": 4.884997405984098,
       "ceiling": 29.201965766966477
     },
-    "total_tds": 0.20387
+    "total_tds": 0.20387,
+    "dk_id": NaN
   },
   "Isaiah Davis": {
     "id": "DaviIs00",
@@ -9298,7 +9428,8 @@
       "mean": 2.1033110072293555,
       "ceiling": 20.375286328506064
     },
-    "total_tds": 0.06538
+    "total_tds": 0.06538,
+    "dk_id": NaN
   },
   "Mason Taylor": {
     "id": "TaylMa01",
@@ -9369,7 +9500,8 @@
       "mean": 5.538599813873919,
       "ceiling": 26.78672609055112
     },
-    "total_tds": 0.10597
+    "total_tds": 0.10597,
+    "dk_id": NaN
   },
   "Jeremy Ruckert": {
     "id": "RuckJe00",
@@ -9440,7 +9572,8 @@
       "mean": 2.4238152703818914,
       "ceiling": 24.629561631400232
     },
-    "total_tds": 0.10619
+    "total_tds": 0.10619,
+    "dk_id": NaN
   },
   "Garrett Wilson": {
     "id": "WilsGa00",
@@ -9511,7 +9644,8 @@
       "mean": 16.776774877596125,
       "ceiling": 46.67500441694317
     },
-    "total_tds": 0.53089
+    "total_tds": 0.53089,
+    "dk_id": NaN
   },
   "Arian Smith": {
     "id": "SmitAr01",
@@ -9582,7 +9716,8 @@
       "mean": 3.587542531711045,
       "ceiling": 22.45361736275489
     },
-    "total_tds": 0.10115
+    "total_tds": 0.10115,
+    "dk_id": NaN
   },
   "Tyler Johnson": {
     "id": "JohnTy02",
@@ -9653,7 +9788,8 @@
       "mean": 3.0155407028301005,
       "ceiling": 19.65923834473658
     },
-    "total_tds": 0.04933
+    "total_tds": 0.04933,
+    "dk_id": NaN
   },
   "Allen Lazard": {
     "id": "LazaAl00",
@@ -9724,7 +9860,8 @@
       "mean": 2.3017716063875397,
       "ceiling": 21.182442397282312
     },
-    "total_tds": 0.06954
+    "total_tds": 0.06954,
+    "dk_id": NaN
   },
   "Jared Goff": {
     "id": "GoffJa00",
@@ -9795,7 +9932,8 @@
       "mean": 19.094725447080574,
       "ceiling": 57.53343670605656
     },
-    "total_tds": 0.0253
+    "total_tds": 0.0253,
+    "dk_id": 40142399
   },
   "Jahmyr Gibbs": {
     "id": "GibbJa00",
@@ -9866,7 +10004,8 @@
       "mean": 21.547630008791955,
       "ceiling": 56.662521488297905
     },
-    "total_tds": 0.83671
+    "total_tds": 0.83671,
+    "dk_id": 40142474
   },
   "David Montgomery": {
     "id": "MontDa01",
@@ -9937,7 +10076,8 @@
       "mean": 13.903469006725684,
       "ceiling": 48.04455831354045
     },
-    "total_tds": 0.5999099999999999
+    "total_tds": 0.5999099999999999,
+    "dk_id": 40142498
   },
   "Craig Reynolds": {
     "id": "ReynCr00",
@@ -10008,7 +10148,8 @@
       "mean": 0.5975553562242012,
       "ceiling": 4.491119679005653
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40142680
   },
   "Sam LaPorta": {
     "id": "LapoSa00",
@@ -10079,7 +10220,8 @@
       "mean": 13.47082608956835,
       "ceiling": 43.610904465937814
     },
-    "total_tds": 0.46798
+    "total_tds": 0.46798,
+    "dk_id": 40143142
   },
   "Brock Wright": {
     "id": "WrigBr00",
@@ -10150,7 +10292,8 @@
       "mean": 2.587799401082793,
       "ceiling": 21.014877518840787
     },
-    "total_tds": 0.10293
+    "total_tds": 0.10293,
+    "dk_id": 40143196
   },
   "Amon-Ra St. Brown": {
     "id": "StBrAm00",
@@ -10221,7 +10364,8 @@
       "mean": 22.844973642543106,
       "ceiling": 63.00962638851095
     },
-    "total_tds": 0.81905
+    "total_tds": 0.81905,
+    "dk_id": 40142720
   },
   "Jameson Williams": {
     "id": "WillJa09",
@@ -10292,7 +10436,8 @@
       "mean": 14.005355887064844,
       "ceiling": 44.65884081871872
     },
-    "total_tds": 0.49285
+    "total_tds": 0.49285,
+    "dk_id": 40142744
   },
   "Isaac TeSlaa": {
     "id": "TeSlIs00",
@@ -10363,7 +10508,8 @@
       "mean": 3.578575460671151,
       "ceiling": 33.94720321094967
     },
-    "total_tds": 0.14679
+    "total_tds": 0.14679,
+    "dk_id": 40142850
   },
   "Kalif Raymond": {
     "id": "RaymKa00",
@@ -10434,7 +10580,8 @@
       "mean": 3.286978926608033,
       "ceiling": 20.289520634424353
     },
-    "total_tds": 0.06034
+    "total_tds": 0.06034,
+    "dk_id": 40142874
   },
   "Jordan Love": {
     "id": "LoveJo01",
@@ -10505,7 +10652,8 @@
       "mean": 17.344174647632904,
       "ceiling": 53.06828349247128
     },
-    "total_tds": 0.14594
+    "total_tds": 0.14594,
+    "dk_id": NaN
   },
   "Josh Jacobs": {
     "id": "JacoJo00",
@@ -10576,7 +10724,8 @@
       "mean": 18.094609673194995,
       "ceiling": 61.93988977985952
     },
-    "total_tds": 0.8626
+    "total_tds": 0.8626,
+    "dk_id": NaN
   },
   "Chris Brooks": {
     "id": "BrooCh01",
@@ -10647,7 +10796,8 @@
       "mean": 3.726170212107462,
       "ceiling": 26.58366203929668
     },
-    "total_tds": 0.13480999999999999
+    "total_tds": 0.13480999999999999,
+    "dk_id": NaN
   },
   "Emanuel Wilson": {
     "id": "WilsEm00",
@@ -10718,7 +10868,8 @@
       "mean": 2.3332775658329403,
       "ceiling": 25.61079432756213
     },
-    "total_tds": 0.09558
+    "total_tds": 0.09558,
+    "dk_id": NaN
   },
   "Tucker Kraft": {
     "id": "KrafTu00",
@@ -10789,7 +10940,8 @@
       "mean": 12.94938888015004,
       "ceiling": 47.64427810108264
     },
-    "total_tds": 0.45785
+    "total_tds": 0.45785,
+    "dk_id": NaN
   },
   "Luke Musgrave": {
     "id": "MusgLu00",
@@ -10860,7 +11012,8 @@
       "mean": 2.3785583447793424,
       "ceiling": 22.28779109497743
     },
-    "total_tds": 0.09192
+    "total_tds": 0.09192,
+    "dk_id": NaN
   },
   "Romeo Doubs": {
     "id": "DoubRo00",
@@ -10931,7 +11084,8 @@
       "mean": 11.70173256465101,
       "ceiling": 40.702685799305684
     },
-    "total_tds": 0.38044
+    "total_tds": 0.38044,
+    "dk_id": NaN
   },
   "Matthew Golden": {
     "id": "GoldMa00",
@@ -11002,7 +11156,8 @@
       "mean": 10.688174768961659,
       "ceiling": 41.01056087239029
     },
-    "total_tds": 0.37634
+    "total_tds": 0.37634,
+    "dk_id": NaN
   },
   "Dontayvion Wicks": {
     "id": "WickDo00",
@@ -11073,7 +11228,8 @@
       "mean": 8.919054617503772,
       "ceiling": 39.39728186910168
     },
-    "total_tds": 0.37963
+    "total_tds": 0.37963,
+    "dk_id": NaN
   },
   "Malik Heath": {
     "id": "HeatMa00",
@@ -11144,7 +11300,8 @@
       "mean": 3.0287252827906572,
       "ceiling": 21.742433208801028
     },
-    "total_tds": 0.0822
+    "total_tds": 0.0822,
+    "dk_id": NaN
   },
   "Dak Prescott": {
     "id": "PresDa01",
@@ -11215,7 +11372,8 @@
       "mean": 18.860475129384437,
       "ceiling": 56.915883659983905
     },
-    "total_tds": 0.10959
+    "total_tds": 0.10959,
+    "dk_id": NaN
   },
   "Javonte Williams": {
     "id": "WillJa08",
@@ -11286,7 +11444,8 @@
       "mean": 16.024230875854972,
       "ceiling": 48.93848200932222
     },
-    "total_tds": 0.59399
+    "total_tds": 0.59399,
+    "dk_id": NaN
   },
   "Miles Sanders": {
     "id": "SandMi00",
@@ -11357,7 +11516,8 @@
       "mean": 6.513813237260997,
       "ceiling": 30.774282713292468
     },
-    "total_tds": 0.25706
+    "total_tds": 0.25706,
+    "dk_id": NaN
   },
   "Hunter Luepke": {
     "id": "LuepHu01",
@@ -11428,7 +11588,8 @@
       "mean": 1.3947504886267446,
       "ceiling": 5.811980988506484
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Jake Ferguson": {
     "id": "FergJa01",
@@ -11499,7 +11660,8 @@
       "mean": 13.54134062602615,
       "ceiling": 45.312730542073844
     },
-    "total_tds": 0.26546
+    "total_tds": 0.26546,
+    "dk_id": NaN
   },
   "Luke Schoonmaker": {
     "id": "SchoLu00",
@@ -11570,7 +11732,8 @@
       "mean": 2.445155069338165,
       "ceiling": 21.944805711638946
     },
-    "total_tds": 0.09537
+    "total_tds": 0.09537,
+    "dk_id": NaN
   },
   "Brevyn Spann-Ford": {
     "id": "SpanBr00",
@@ -11641,7 +11804,8 @@
       "mean": 1.3727469246411117,
       "ceiling": 5.7849878986789784
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "George Pickens": {
     "id": "PickGe00",
@@ -11712,7 +11876,8 @@
       "mean": 16.425690734369763,
       "ceiling": 47.614980979765434
     },
-    "total_tds": 0.48378
+    "total_tds": 0.48378,
+    "dk_id": NaN
   },
   "KaVontae Turpin": {
     "id": "TurpKa00",
@@ -11783,7 +11948,8 @@
       "mean": 9.856894856330179,
       "ceiling": 44.61962002422367
     },
-    "total_tds": 0.33814
+    "total_tds": 0.33814,
+    "dk_id": NaN
   },
   "Jalen Tolbert": {
     "id": "TolbJa00",
@@ -11854,7 +12020,8 @@
       "mean": 6.6964116985143125,
       "ceiling": 27.888710655329103
     },
-    "total_tds": 0.14643
+    "total_tds": 0.14643,
+    "dk_id": NaN
   },
   "Ryan Flournoy": {
     "id": "FlouRy00",
@@ -11925,7 +12092,8 @@
       "mean": 3.040745369836879,
       "ceiling": 21.442655486135216
     },
-    "total_tds": 0.06014
+    "total_tds": 0.06014,
+    "dk_id": NaN
   },
   "Daniel Jones": {
     "id": "JoneDa05",
@@ -11996,7 +12164,8 @@
       "mean": 19.424326800702776,
       "ceiling": 55.70647367472246
     },
-    "total_tds": 0.3869
+    "total_tds": 0.3869,
+    "dk_id": 40142405
   },
   "Jonathan Taylor": {
     "id": "TaylJo02",
@@ -12067,7 +12236,8 @@
       "mean": 22.664878213649583,
       "ceiling": 61.83723677643256
     },
-    "total_tds": 0.8538800000000001
+    "total_tds": 0.8538800000000001,
+    "dk_id": 40142478
   },
   "DJ Giddens": {
     "id": "GiddDJ00",
@@ -12138,7 +12308,8 @@
       "mean": 2.7283074695900558,
       "ceiling": 22.506004486052532
     },
-    "total_tds": 0.06459
+    "total_tds": 0.06459,
+    "dk_id": 40142714
   },
   "Tyler Goodson": {
     "id": "GoodTy00",
@@ -12209,7 +12380,8 @@
       "mean": 1.4269738846670912,
       "ceiling": 15.32066244435087
     },
-    "total_tds": 0.01442
+    "total_tds": 0.01442,
+    "dk_id": 40142620
   },
   "Tyler Warren": {
     "id": "WarrTy00",
@@ -12280,7 +12452,8 @@
       "mean": 14.279646426016722,
       "ceiling": 41.430830318885455
     },
-    "total_tds": 0.35473
+    "total_tds": 0.35473,
+    "dk_id": 40143138
   },
   "Mo Alie-Cox": {
     "id": "AlieMo00",
@@ -12351,7 +12524,8 @@
       "mean": 1.4625502021590908,
       "ceiling": 18.81140332287955
     },
-    "total_tds": 0.01771
+    "total_tds": 0.01771,
+    "dk_id": 40143258
   },
   "Michael Pittman Jr": {
     "id": "PittMi01",
@@ -12422,7 +12596,8 @@
       "mean": 14.73330224841885,
       "ceiling": 41.589138725340916
     },
-    "total_tds": 0.35849
+    "total_tds": 0.35849,
+    "dk_id": 40142774
   },
   "Josh Downs": {
     "id": "DownJo00",
@@ -12493,7 +12668,8 @@
       "mean": 9.651464651486448,
       "ceiling": 33.9398284441624
     },
-    "total_tds": 0.216
+    "total_tds": 0.216,
+    "dk_id": 40142812
   },
   "Adonai Mitchell": {
     "id": "MitcAd00",
@@ -12564,61 +12740,71 @@
       "mean": 7.1205604182621,
       "ceiling": 33.76667220704048
     },
-    "total_tds": 0.21769
+    "total_tds": 0.21769,
+    "dk_id": 40142878
   },
   "Kyler Murray": {
     "id": "MurrKy00",
     "team": "ARI",
     "pos": "qb",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Trey Benson": {
     "id": "BensTr01",
     "team": "ARI",
     "pos": "rb",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Emari Demercado": {
     "id": "DemeEm00",
     "team": "ARI",
     "pos": "rb",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Trey McBride": {
     "id": "McBrTr01",
     "team": "ARI",
     "pos": "te",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Tip Reiman": {
     "id": "ReimTi00",
     "team": "ARI",
     "pos": "te",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Elijah Higgins": {
     "id": "HiggEl00",
     "team": "ARI",
     "pos": "te",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Marvin Harrison Jr.": {
     "id": "HarrMa05",
     "team": "ARI",
     "pos": "wr",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Michael Wilson": {
     "id": "WilsMi01",
     "team": "ARI",
     "pos": "wr",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Greg Dortch": {
     "id": "DortGr00",
     "team": "ARI",
     "pos": "wr",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "C.J. Stroud": {
     "id": "StroCJ00",
@@ -12689,7 +12875,8 @@
       "mean": 15.389630749632534,
       "ceiling": 53.83577841993374
     },
-    "total_tds": 0.08433
+    "total_tds": 0.08433,
+    "dk_id": 40142408
   },
   "Nick Chubb": {
     "id": "ChubNi00",
@@ -12760,7 +12947,8 @@
       "mean": 11.449217837446165,
       "ceiling": 44.2942643443468
     },
-    "total_tds": 0.56831
+    "total_tds": 0.56831,
+    "dk_id": 40142512
   },
   "Woody Marks": {
     "id": "MarkWo00",
@@ -12831,7 +13019,8 @@
       "mean": 6.708391261349463,
       "ceiling": 34.54914045997849
     },
-    "total_tds": 0.31234
+    "total_tds": 0.31234,
+    "dk_id": 40142542
   },
   "Dare Ogunbowale": {
     "id": "OgunDa00",
@@ -12902,7 +13091,8 @@
       "mean": 1.691373724811599,
       "ceiling": 19.514816803410962
     },
-    "total_tds": 0.03934
+    "total_tds": 0.03934,
+    "dk_id": 40142672
   },
   "Dalton Schultz": {
     "id": "SchuDa00",
@@ -12973,7 +13163,8 @@
       "mean": 9.342707614329942,
       "ceiling": 33.35208993641157
     },
-    "total_tds": 0.22486
+    "total_tds": 0.22486,
+    "dk_id": 40143166
   },
   "Harrison Bryant": {
     "id": "BryaHa00",
@@ -13044,7 +13235,8 @@
       "mean": 1.1776088780177705,
       "ceiling": 19.161931999324764
     },
-    "total_tds": 0.01755
+    "total_tds": 0.01755,
+    "dk_id": 40143306
   },
   "Nico Collins": {
     "id": "CollNi00",
@@ -13115,7 +13307,8 @@
       "mean": 19.48791777880363,
       "ceiling": 54.91676493182365
     },
-    "total_tds": 0.56503
+    "total_tds": 0.56503,
+    "dk_id": 40142718
   },
   "Christian Kirk": {
     "id": "KirkCh00",
@@ -13186,7 +13379,8 @@
       "mean": 9.853476515530833,
       "ceiling": 35.944231072414425
     },
-    "total_tds": 0.22974
+    "total_tds": 0.22974,
+    "dk_id": 40142800
   },
   "Jayden Higgins": {
     "id": "HiggJa00",
@@ -13257,7 +13451,8 @@
       "mean": 4.773414719530699,
       "ceiling": 29.81004607059912
     },
-    "total_tds": 0.16659
+    "total_tds": 0.16659,
+    "dk_id": 40142822
   },
   "Xavier Hutchinson": {
     "id": "HutcXa00",
@@ -13328,7 +13523,8 @@
       "mean": 3.9529402700854512,
       "ceiling": 22.850013303545634
     },
-    "total_tds": 0.0552
+    "total_tds": 0.0552,
+    "dk_id": 40142858
   },
   "Jaylin Noel": {
     "id": "NoelJa00",
@@ -13399,7 +13595,8 @@
       "mean": 2.2695620439943407,
       "ceiling": 16.16671596386769
     },
-    "total_tds": 0.03355
+    "total_tds": 0.03355,
+    "dk_id": 40143056
   },
   "Trevor Lawrence": {
     "id": "LawrTr00",
@@ -13470,7 +13667,8 @@
       "mean": 16.588225700852,
       "ceiling": 50.1409475112859
     },
-    "total_tds": 0.17427
+    "total_tds": 0.17427,
+    "dk_id": 40142409
   },
   "Travis Etienne Jr.": {
     "id": "EtieTr00",
@@ -13541,7 +13739,8 @@
       "mean": 13.268900559765443,
       "ceiling": 46.10247739354814
     },
-    "total_tds": 0.46977
+    "total_tds": 0.46977,
+    "dk_id": 40142496
   },
   "Bhayshul Tuten": {
     "id": "TuteBh00",
@@ -13612,7 +13811,8 @@
       "mean": 7.1514727250380465,
       "ceiling": 54.51745275165539
     },
-    "total_tds": 0.32577
+    "total_tds": 0.32577,
+    "dk_id": 40142524
   },
   "LeQuint Allen Jr.": {
     "id": "AlleLe01",
@@ -13683,7 +13883,8 @@
       "mean": 2.772904020032728,
       "ceiling": 21.16849809240923
     },
-    "total_tds": 0.07996
+    "total_tds": 0.07996,
+    "dk_id": 40142600
   },
   "Brenton Strange": {
     "id": "StraBr00",
@@ -13754,7 +13955,8 @@
       "mean": 9.63764806938749,
       "ceiling": 37.483067496348
     },
-    "total_tds": 0.20713
+    "total_tds": 0.20713,
+    "dk_id": 40143168
   },
   "Hunter Long": {
     "id": "LongHu00",
@@ -13825,7 +14027,8 @@
       "mean": 2.097493374985394,
       "ceiling": 19.937318599179548
     },
-    "total_tds": 0.06629
+    "total_tds": 0.06629,
+    "dk_id": 40143240
   },
   "Johnny Mundt": {
     "id": "MundJo00",
@@ -13896,7 +14099,8 @@
       "mean": 1.4899523684676899,
       "ceiling": 20.521100089907485
     },
-    "total_tds": 0.04992
+    "total_tds": 0.04992,
+    "dk_id": 40143238
   },
   "Brian Thomas Jr.": {
     "id": "ThomBr01",
@@ -13967,7 +14171,8 @@
       "mean": 15.519332043234357,
       "ceiling": 50.12085802636997
     },
-    "total_tds": 0.43685
+    "total_tds": 0.43685,
+    "dk_id": 40142738
   },
   "Dyami Brown": {
     "id": "BrowDy00",
@@ -14038,7 +14243,8 @@
       "mean": 8.440292969819486,
       "ceiling": 33.586162403014
     },
-    "total_tds": 0.23922
+    "total_tds": 0.23922,
+    "dk_id": 40142810
   },
   "Travis Hunter": {
     "id": "HuntTr00",
@@ -14109,7 +14315,8 @@
       "mean": 8.27192308807005,
       "ceiling": 34.24040468356139
     },
-    "total_tds": 0.17535
+    "total_tds": 0.17535,
+    "dk_id": 40142790
   },
   "Parker Washington": {
     "id": "WashPa01",
@@ -14180,7 +14387,8 @@
       "mean": 6.564760231863991,
       "ceiling": 26.780051062846667
     },
-    "total_tds": 0.11936
+    "total_tds": 0.11936,
+    "dk_id": 40142836
   },
   "Tim Patrick": {
     "id": "PatrTi00",
@@ -14251,7 +14459,8 @@
       "mean": 1.373121723858711,
       "ceiling": 6.014979811726354
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40142926
   },
   "Carson Wentz": {
     "id": "WentCa00",
@@ -14322,7 +14531,8 @@
       "mean": 14.786620860540683,
       "ceiling": 45.4518188161026
     },
-    "total_tds": 0.07501
+    "total_tds": 0.07501,
+    "dk_id": NaN
   },
   "Jordan Mason": {
     "id": "MasoJo00",
@@ -14393,7 +14603,8 @@
       "mean": 15.185435520717919,
       "ceiling": 52.871068433118865
     },
-    "total_tds": 0.65983
+    "total_tds": 0.65983,
+    "dk_id": NaN
   },
   "Cam Akers": {
     "id": "AkerCa00",
@@ -14464,7 +14675,8 @@
       "mean": 1.6449952331984987,
       "ceiling": 20.17061002703532
     },
-    "total_tds": 0.06003
+    "total_tds": 0.06003,
+    "dk_id": NaN
   },
   "Zavier Scott": {
     "id": "ScotZa00",
@@ -14535,7 +14747,8 @@
       "mean": 2.2328495258276324,
       "ceiling": 19.948164755549314
     },
-    "total_tds": 0.0499
+    "total_tds": 0.0499,
+    "dk_id": NaN
   },
   "T.J. Hockenson": {
     "id": "HockTJ00",
@@ -14606,7 +14819,8 @@
       "mean": 10.617310379704794,
       "ceiling": 33.949226288307415
     },
-    "total_tds": 0.2682
+    "total_tds": 0.2682,
+    "dk_id": NaN
   },
   "Josh Oliver": {
     "id": "OlivJo00",
@@ -14677,7 +14891,8 @@
       "mean": 2.484862585750237,
       "ceiling": 20.991704226658282
     },
-    "total_tds": 0.07744
+    "total_tds": 0.07744,
+    "dk_id": NaN
   },
   "Justin Jefferson": {
     "id": "JeffJu00",
@@ -14748,7 +14963,8 @@
       "mean": 17.53794015802394,
       "ceiling": 50.97750560989579
     },
-    "total_tds": 0.45325
+    "total_tds": 0.45325,
+    "dk_id": NaN
   },
   "Jordan Addison": {
     "id": "AddiJo00",
@@ -14819,7 +15035,8 @@
       "mean": 10.175068498170011,
       "ceiling": 38.83421679625428
     },
-    "total_tds": 0.28833
+    "total_tds": 0.28833,
+    "dk_id": NaN
   },
   "Jalen Nailor": {
     "id": "NailJa00",
@@ -14890,7 +15107,8 @@
       "mean": 4.366266817342245,
       "ceiling": 23.195312231287133
     },
-    "total_tds": 0.07738
+    "total_tds": 0.07738,
+    "dk_id": NaN
   },
   "Adam Thielen": {
     "id": "ThieAd00",
@@ -14961,7 +15179,8 @@
       "mean": 2.6629882322193,
       "ceiling": 15.902667426972487
     },
-    "total_tds": 0.02803
+    "total_tds": 0.02803,
+    "dk_id": NaN
   },
   "Tai Felton": {
     "id": "FeltTa00",
@@ -15032,7 +15251,8 @@
       "mean": 0.5107596551224906,
       "ceiling": 4.412983044859174
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Marcus Mariota": {
     "id": "MariMa01",
@@ -15103,7 +15323,8 @@
       "mean": 16.7838686380264,
       "ceiling": 52.99001370639968
     },
-    "total_tds": 0.25249
+    "total_tds": 0.25249,
+    "dk_id": 40142413
   },
   "Jacory Croskey-Merritt": {
     "id": "CrosJa00",
@@ -15174,7 +15395,8 @@
       "mean": 9.102683640281679,
       "ceiling": 41.35957017996918
     },
-    "total_tds": 0.445
+    "total_tds": 0.445,
+    "dk_id": 40142508
   },
   "Jeremy McNichols": {
     "id": "McNiJe00",
@@ -15245,7 +15467,8 @@
       "mean": 4.769641811732848,
       "ceiling": 29.1017997498387
     },
-    "total_tds": 0.20436
+    "total_tds": 0.20436,
+    "dk_id": 40142520
   },
   "Chris Rodriguez Jr.": {
     "id": "RodrCh01",
@@ -15316,7 +15539,8 @@
       "mean": 4.535070270624737,
       "ceiling": 28.25956579089015
     },
-    "total_tds": 0.20093
+    "total_tds": 0.20093,
+    "dk_id": 40142552
   },
   "Zach Ertz": {
     "id": "ErtzZa00",
@@ -15387,7 +15611,8 @@
       "mean": 10.885664100482009,
       "ceiling": 36.690511927674976
     },
-    "total_tds": 0.33276
+    "total_tds": 0.33276,
+    "dk_id": 40143148
   },
   "Ben Sinnott": {
     "id": "SinnBe00",
@@ -15458,7 +15683,8 @@
       "mean": 2.293223168758335,
       "ceiling": 24.754152301095328
     },
-    "total_tds": 0.07375
+    "total_tds": 0.07375,
+    "dk_id": 40143348
   },
   "Deebo Samuel Sr.": {
     "id": "SamuDe00",
@@ -15529,7 +15755,8 @@
       "mean": 15.991213683103336,
       "ceiling": 56.150536753331295
     },
-    "total_tds": 0.49546
+    "total_tds": 0.49546,
+    "dk_id": 40142740
   },
   "Luke McCaffrey": {
     "id": "McCaLu00",
@@ -15600,7 +15827,8 @@
       "mean": 7.21612605916284,
       "ceiling": 32.24610852844193
     },
-    "total_tds": 0.14941
+    "total_tds": 0.14941,
+    "dk_id": 40142860
   },
   "Jaylin Lane": {
     "id": "LaneJa00",
@@ -15671,7 +15899,8 @@
       "mean": 4.807282897909605,
       "ceiling": 23.51932353759807
     },
-    "total_tds": 0.10643
+    "total_tds": 0.10643,
+    "dk_id": 40142868
   },
   "Chris Moore": {
     "id": "MoorCh00",
@@ -15742,7 +15971,8 @@
       "mean": 3.167565963220846,
       "ceiling": 17.958198264122593
     },
-    "total_tds": 0.03129
+    "total_tds": 0.03129,
+    "dk_id": 40143112
   },
   "Michael Penix Jr.": {
     "id": "PeniMi00",
@@ -15813,7 +16043,8 @@
       "mean": 14.39950367981507,
       "ceiling": 49.61179028251102
     },
-    "total_tds": 0.12562
+    "total_tds": 0.12562,
+    "dk_id": 40142411
   },
   "Bijan Robinson": {
     "id": "RobiBi01",
@@ -15884,7 +16115,8 @@
       "mean": 22.919754971740964,
       "ceiling": 66.90602966542244
     },
-    "total_tds": 0.8489599999999999
+    "total_tds": 0.8489599999999999,
+    "dk_id": 40142472
   },
   "Tyler Allgeier": {
     "id": "AllgTy00",
@@ -15955,7 +16187,8 @@
       "mean": 6.514382687810174,
       "ceiling": 35.2785387071189
     },
-    "total_tds": 0.24473
+    "total_tds": 0.24473,
+    "dk_id": 40142530
   },
   "Nathan Carter": {
     "id": "CartNa00",
@@ -16026,7 +16259,8 @@
       "mean": 0.8974602248801392,
       "ceiling": 4.654339377102717
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40142708
   },
   "Kyle Pitts Sr.": {
     "id": "PittKy00",
@@ -16097,7 +16331,8 @@
       "mean": 9.484137130473956,
       "ceiling": 34.247849601873625
     },
-    "total_tds": 0.21342
+    "total_tds": 0.21342,
+    "dk_id": 40143158
   },
   "Charlie Woerner": {
     "id": "WoerCh00",
@@ -16168,7 +16403,8 @@
       "mean": 0.9094169858627607,
       "ceiling": 5.295738724022501
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40143358
   },
   "Drake London": {
     "id": "LondDr00",
@@ -16239,7 +16475,8 @@
       "mean": 15.804521501737328,
       "ceiling": 45.729693442724056
     },
-    "total_tds": 0.4466
+    "total_tds": 0.4466,
+    "dk_id": 40142750
   },
   "Darnell Mooney": {
     "id": "MoonDa00",
@@ -16310,7 +16547,8 @@
       "mean": 10.00664901745727,
       "ceiling": 38.65318790991912
     },
-    "total_tds": 0.25383
+    "total_tds": 0.25383,
+    "dk_id": 40142786
   },
   "Ray-Ray McCloud III": {
     "id": "McClRa00",
@@ -16381,7 +16619,8 @@
       "mean": 5.57489752918936,
       "ceiling": 24.9429654480345
     },
-    "total_tds": 0.10354
+    "total_tds": 0.10354,
+    "dk_id": 40142832
   },
   "KhaDarel Hodge": {
     "id": "HodgKh00",
@@ -16452,7 +16691,8 @@
       "mean": 0.5609048916337587,
       "ceiling": 4.121187535419018
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40143122
   },
   "David Sills V": {
     "id": "SillDa00",
@@ -16523,7 +16763,8 @@
       "mean": 0.18040578201119434,
       "ceiling": 4.0921249265944395
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40143126
   },
   "Bryce Young": {
     "id": "YounBr01",
@@ -16594,7 +16835,8 @@
       "mean": 15.986604826889712,
       "ceiling": 50.28528685673752
     },
-    "total_tds": 0.15607
+    "total_tds": 0.15607,
+    "dk_id": 40142414
   },
   "Chuba Hubbard": {
     "id": "HubbCh00",
@@ -16665,7 +16907,8 @@
       "mean": 14.560197450587593,
       "ceiling": 50.17750606267599
     },
-    "total_tds": 0.53891
+    "total_tds": 0.53891,
+    "dk_id": 40142492
   },
   "Rico Dowdle": {
     "id": "DowdDa00",
@@ -16736,7 +16979,8 @@
       "mean": 7.706173261915224,
       "ceiling": 37.770589698155376
     },
-    "total_tds": 0.33251
+    "total_tds": 0.33251,
+    "dk_id": 40142538
   },
   "Trevor Etienne": {
     "id": "EtieTr01",
@@ -16807,7 +17051,8 @@
       "mean": 1.3463821337814077,
       "ceiling": 18.3884255532095
     },
-    "total_tds": 0.0495
+    "total_tds": 0.0495,
+    "dk_id": 40142648
   },
   "Tommy Tremble": {
     "id": "TremTo00",
@@ -16878,7 +17123,8 @@
       "mean": 5.285549267662961,
       "ceiling": 24.364528490657367
     },
-    "total_tds": 0.11592
+    "total_tds": 0.11592,
+    "dk_id": 40143198
   },
   "Mitchell Evans": {
     "id": "EvanMi01",
@@ -16949,7 +17195,8 @@
       "mean": 2.534778224083336,
       "ceiling": 26.924348897357223
     },
-    "total_tds": 0.06983
+    "total_tds": 0.06983,
+    "dk_id": 40143292
   },
   "Tetairoa McMillan": {
     "id": "McMiTe00",
@@ -17020,7 +17267,8 @@
       "mean": 16.89421662145297,
       "ceiling": 55.51116193951979
     },
-    "total_tds": 0.51014
+    "total_tds": 0.51014,
+    "dk_id": 40142746
   },
   "Hunter Renfrow": {
     "id": "RenfHu00",
@@ -17091,7 +17339,8 @@
       "mean": 7.6508753110424665,
       "ceiling": 37.38339215418428
     },
-    "total_tds": 0.27144
+    "total_tds": 0.27144,
+    "dk_id": 40142826
   },
   "Brycen Tremayne": {
     "id": "TremBr00",
@@ -17162,7 +17411,8 @@
       "mean": 3.4090773548756266,
       "ceiling": 25.51964165506122
     },
-    "total_tds": 0.11188
+    "total_tds": 0.11188,
+    "dk_id": 40143024
   },
   "David Moore": {
     "id": "MoorDa01",
@@ -17233,7 +17483,8 @@
       "mean": 3.2808610545758996,
       "ceiling": 23.1065859274664
     },
-    "total_tds": 0.05532
+    "total_tds": 0.05532,
+    "dk_id": 40143022
   },
   "Jake Browning": {
     "id": "BrowJa01",
@@ -17304,7 +17555,8 @@
       "mean": 16.659979615027915,
       "ceiling": 53.8205850292205
     },
-    "total_tds": 0.09967
+    "total_tds": 0.09967,
+    "dk_id": NaN
   },
   "Chase Brown": {
     "id": "BrowCh06",
@@ -17375,7 +17627,8 @@
       "mean": 14.055555786953628,
       "ceiling": 46.24701168160338
     },
-    "total_tds": 0.5095799999999999
+    "total_tds": 0.5095799999999999,
+    "dk_id": NaN
   },
   "Tahj Brooks": {
     "id": "BrooTa00",
@@ -17446,7 +17699,8 @@
       "mean": 1.288569454813619,
       "ceiling": 19.370364605044948
     },
-    "total_tds": 0.05016
+    "total_tds": 0.05016,
+    "dk_id": NaN
   },
   "Mike Gesicki": {
     "id": "GesiMi00",
@@ -17517,7 +17771,8 @@
       "mean": 5.707051814952805,
       "ceiling": 24.333662029451354
     },
-    "total_tds": 0.10783
+    "total_tds": 0.10783,
+    "dk_id": NaN
   },
   "Drew Sample": {
     "id": "SampDr00",
@@ -17588,7 +17843,8 @@
       "mean": 2.0169295909616083,
       "ceiling": 21.78117055850696
     },
-    "total_tds": 0.07016
+    "total_tds": 0.07016,
+    "dk_id": NaN
   },
   "Cam Grandy": {
     "id": "GranCa00",
@@ -17659,7 +17915,8 @@
       "mean": 0.7324594665804363,
       "ceiling": 4.692862339310404
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Ja&apos;Marr Chase": {
     "id": "ChasJa00",
@@ -17730,7 +17987,8 @@
       "mean": 17.334751748081125,
       "ceiling": 55.217497621035974
     },
-    "total_tds": 0.50826
+    "total_tds": 0.50826,
+    "dk_id": NaN
   },
   "Tee Higgins": {
     "id": "HiggTe00",
@@ -17801,7 +18059,8 @@
       "mean": 12.277557793226027,
       "ceiling": 43.806176015933566
     },
-    "total_tds": 0.33914
+    "total_tds": 0.33914,
+    "dk_id": NaN
   },
   "Andrei Iosivas": {
     "id": "IosiAn00",
@@ -17872,7 +18131,8 @@
       "mean": 4.462449313500511,
       "ceiling": 24.854290485587295
     },
-    "total_tds": 0.12115
+    "total_tds": 0.12115,
+    "dk_id": NaN
   },
   "Mitchell Tinsley": {
     "id": "TinsMi00",
@@ -17943,79 +18203,92 @@
       "mean": 1.421083454677939,
       "ceiling": 15.445168523560225
     },
-    "total_tds": 0.04621
+    "total_tds": 0.04621,
+    "dk_id": NaN
   },
   "Sam Darnold": {
     "id": "DarnSa00",
     "team": "SEA",
     "pos": "qb",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Ken Walker III": {
     "id": "WalkKe01",
     "team": "SEA",
     "pos": "rb",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Zach Charbonnet": {
     "id": "CharZa00",
     "team": "SEA",
     "pos": "rb",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "George Holani": {
     "id": "HolaGe01",
     "team": "SEA",
     "pos": "rb",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Jacardia Wright": {
     "id": "WrigJa05",
     "team": "SEA",
     "pos": "rb",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "AJ Barner": {
     "id": "BarnAJ00",
     "team": "SEA",
     "pos": "te",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Elijah Arroyo": {
     "id": "ArroEl00",
     "team": "SEA",
     "pos": "te",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Eric Saubert": {
     "id": "SaubEr00",
     "team": "SEA",
     "pos": "te",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Jaxon Smith-Njigba": {
     "id": "SmitJa02",
     "team": "SEA",
     "pos": "wr",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Cooper Kupp": {
     "id": "KuppCo00",
     "team": "SEA",
     "pos": "wr",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Tory Horton": {
     "id": "HortTo00",
     "team": "SEA",
     "pos": "wr",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Dareke Young": {
     "id": "YounDa02",
     "team": "SEA",
     "pos": "wr",
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Tua Tagovailoa": {
     "id": "TagoTu00",
@@ -18086,7 +18359,8 @@
       "mean": 15.532101282635896,
       "ceiling": 54.981738075733425
     },
-    "total_tds": 0.02972
+    "total_tds": 0.02972,
+    "dk_id": NaN
   },
   "De'Von Achane": {
     "id": "AchaDe00",
@@ -18157,7 +18431,8 @@
       "mean": 20.74133840044354,
       "ceiling": 55.97327867444222
     },
-    "total_tds": 0.7727999999999999
+    "total_tds": 0.7727999999999999,
+    "dk_id": NaN
   },
   "Ollie Gordon II": {
     "id": "GordOl00",
@@ -18228,7 +18503,8 @@
       "mean": 6.02662071556602,
       "ceiling": 33.33039110152154
     },
-    "total_tds": 0.30047999999999997
+    "total_tds": 0.30047999999999997,
+    "dk_id": NaN
   },
   "Alec Ingold": {
     "id": "IngoAl00",
@@ -18299,7 +18575,8 @@
       "mean": 2.079579789796371,
       "ceiling": 26.68157273689138
     },
-    "total_tds": 0.0669
+    "total_tds": 0.0669,
+    "dk_id": NaN
   },
   "Jaylen Wright": {
     "id": "WrigJa04",
@@ -18370,7 +18647,8 @@
       "mean": 1.3616314948543502,
       "ceiling": 15.041693170033488
     },
-    "total_tds": 0.037059999999999996
+    "total_tds": 0.037059999999999996,
+    "dk_id": NaN
   },
   "Darren Waller": {
     "id": "WallDa00",
@@ -18441,7 +18719,8 @@
       "mean": 5.093685767892,
       "ceiling": 23.78484699807619
     },
-    "total_tds": 0.11765
+    "total_tds": 0.11765,
+    "dk_id": NaN
   },
   "Tanner Conner": {
     "id": "ConnTa00",
@@ -18512,7 +18791,8 @@
       "mean": 1.8828215673639634,
       "ceiling": 6.083345097380884
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Julian Hill": {
     "id": "HillJu01",
@@ -18583,7 +18863,8 @@
       "mean": 1.2050451184880537,
       "ceiling": 14.551389201877948
     },
-    "total_tds": 0.017
+    "total_tds": 0.017,
+    "dk_id": NaN
   },
   "Tyreek Hill": {
     "id": "HillTy00",
@@ -18654,7 +18935,8 @@
       "mean": 16.827790493881107,
       "ceiling": 47.62841803177711
     },
-    "total_tds": 0.46476
+    "total_tds": 0.46476,
+    "dk_id": NaN
   },
   "Jaylen Waddle": {
     "id": "WaddJa00",
@@ -18725,7 +19007,8 @@
       "mean": 13.965392458628648,
       "ceiling": 48.43422745368533
     },
-    "total_tds": 0.46253
+    "total_tds": 0.46253,
+    "dk_id": NaN
   },
   "Malik Washington": {
     "id": "WashMa01",
@@ -18796,7 +19079,8 @@
       "mean": 6.401590500995781,
       "ceiling": 28.880718744451247
     },
-    "total_tds": 0.18162
+    "total_tds": 0.18162,
+    "dk_id": NaN
   },
   "Nick Westbrook-Ikhine": {
     "id": "WestNi00",
@@ -18867,7 +19151,8 @@
       "mean": 1.88003207599805,
       "ceiling": 19.608008601864793
     },
-    "total_tds": 0.05555
+    "total_tds": 0.05555,
+    "dk_id": NaN
   },
   "Dee Eskridge": {
     "id": "EskrDW00",
@@ -18938,7 +19223,8 @@
       "mean": 0.9002948122732748,
       "ceiling": 4.683090909090909
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Jaxson Dart": {
     "id": "DartJa00",
@@ -19009,7 +19295,8 @@
       "mean": 16.400344093312338,
       "ceiling": 50.901288239492786
     },
-    "total_tds": 0.17353
+    "total_tds": 0.17353,
+    "dk_id": 40142419
   },
   "Cam Skattebo": {
     "id": "SkatCa00",
@@ -19080,7 +19367,8 @@
       "mean": 14.948046030925516,
       "ceiling": 49.17347464004114
     },
-    "total_tds": 0.60061
+    "total_tds": 0.60061,
+    "dk_id": 40142504
   },
   "Devin Singletary": {
     "id": "SingDe00",
@@ -19151,7 +19439,8 @@
       "mean": 2.4048677535345955,
       "ceiling": 25.068904112503443
     },
-    "total_tds": 0.12481
+    "total_tds": 0.12481,
+    "dk_id": 40142540
   },
   "Theo Johnson": {
     "id": "JohnTh00",
@@ -19222,7 +19511,8 @@
       "mean": 5.957661119220614,
       "ceiling": 24.108612005761326
     },
-    "total_tds": 0.12078
+    "total_tds": 0.12078,
+    "dk_id": 40143184
   },
   "Daniel Bellinger": {
     "id": "BellDa03",
@@ -19293,7 +19583,8 @@
       "mean": 1.7919854103875985,
       "ceiling": 14.222199045756643
     },
-    "total_tds": 0.01756
+    "total_tds": 0.01756,
+    "dk_id": 40143286
   },
   "Chris Manhertz": {
     "id": "ManhCh00",
@@ -19364,7 +19655,8 @@
       "mean": 1.0267014736813929,
       "ceiling": 15.583452675213453
     },
-    "total_tds": 0.01825
+    "total_tds": 0.01825,
+    "dk_id": 40143288
   },
   "Malik Nabers": {
     "id": "NabeMa00",
@@ -19435,7 +19727,8 @@
       "mean": 21.129425543630653,
       "ceiling": 56.14582652886011
     },
-    "total_tds": 0.57264
+    "total_tds": 0.57264,
+    "dk_id": 40142722
   },
   "Wan&apos;Dale Robinson": {
     "id": "RobiWa00",
@@ -19506,7 +19799,8 @@
       "mean": 12.773814340481955,
       "ceiling": 39.54257051685246
     },
-    "total_tds": 0.24387
+    "total_tds": 0.24387,
+    "dk_id": 40142778
   },
   "Darius Slayton": {
     "id": "SlayDa00",
@@ -19577,7 +19871,8 @@
       "mean": 5.5897890616920245,
       "ceiling": 25.08192002752621
     },
-    "total_tds": 0.08583
+    "total_tds": 0.08583,
+    "dk_id": 40142834
   },
   "Jalin Hyatt": {
     "id": "HyatJa00",
@@ -19648,7 +19943,8 @@
       "mean": 1.6386714470588974,
       "ceiling": 20.21405063650472
     },
-    "total_tds": 0.06051
+    "total_tds": 0.06051,
+    "dk_id": 40143006
   },
   "Spencer Rattler": {
     "id": "RattSp00",
@@ -19719,7 +20015,8 @@
       "mean": 14.196857630343112,
       "ceiling": 43.54828813057057
     },
-    "total_tds": 0.07486
+    "total_tds": 0.07486,
+    "dk_id": 40142416
   },
   "Alvin Kamara": {
     "id": "KamaAl00",
@@ -19790,7 +20087,8 @@
       "mean": 14.88694124894025,
       "ceiling": 45.559733458318625
     },
-    "total_tds": 0.44106999999999996
+    "total_tds": 0.44106999999999996,
+    "dk_id": 40142490
   },
   "Kendre Miller": {
     "id": "MillKe00",
@@ -19861,7 +20159,8 @@
       "mean": 4.08769835202004,
       "ceiling": 22.815466669508425
     },
-    "total_tds": 0.08401
+    "total_tds": 0.08401,
+    "dk_id": 40142560
   },
   "Devin Neal": {
     "id": "NealDe00",
@@ -19932,7 +20231,8 @@
       "mean": 0.9597173079126102,
       "ceiling": 13.531015565304527
     },
-    "total_tds": 0.01501
+    "total_tds": 0.01501,
+    "dk_id": 40142692
   },
   "Juwan Johnson": {
     "id": "JohnJu00",
@@ -20003,7 +20303,8 @@
       "mean": 12.517633441737221,
       "ceiling": 37.00725627885737
     },
-    "total_tds": 0.28801
+    "total_tds": 0.28801,
+    "dk_id": 40143146
   },
   "Jack Stoll": {
     "id": "StolJa00",
@@ -20074,7 +20375,8 @@
       "mean": 1.4360927131647123,
       "ceiling": 15.865013522740458
     },
-    "total_tds": 0.03253
+    "total_tds": 0.03253,
+    "dk_id": 40143200
   },
   "Chris Olave": {
     "id": "OlavCh00",
@@ -20145,7 +20447,8 @@
       "mean": 15.023828843617439,
       "ceiling": 45.786019792451604
     },
-    "total_tds": 0.33722
+    "total_tds": 0.33722,
+    "dk_id": 40142772
   },
   "Rashid Shaheed": {
     "id": "ShahRa00",
@@ -20216,7 +20519,8 @@
       "mean": 10.01623704217877,
       "ceiling": 34.84729184066087
     },
-    "total_tds": 0.22138
+    "total_tds": 0.22138,
+    "dk_id": 40142792
   },
   "Brandin Cooks": {
     "id": "CookBr01",
@@ -20287,7 +20591,8 @@
       "mean": 5.899008603430615,
       "ceiling": 24.58342050943807
     },
-    "total_tds": 0.11174
+    "total_tds": 0.11174,
+    "dk_id": 40142842
   },
   "Kevin Austin Jr": {
     "id": "AustKe00",
@@ -20358,7 +20663,8 @@
       "mean": 0.7077697943395972,
       "ceiling": 18.261238169356172
     },
-    "total_tds": 0.05113
+    "total_tds": 0.05113,
+    "dk_id": 40143096
   },
   "Aaron Rodgers": {
     "id": "RodgAa00",
@@ -20429,7 +20735,8 @@
       "mean": 14.627306294449289,
       "ceiling": 45.44601467898478
     },
-    "total_tds": 0.02564
+    "total_tds": 0.02564,
+    "dk_id": NaN
   },
   "Jaylen Warren": {
     "id": "WarrJa00",
@@ -20500,7 +20807,8 @@
       "mean": 14.755948409512408,
       "ceiling": 45.683922080982455
     },
-    "total_tds": 0.45299999999999996
+    "total_tds": 0.45299999999999996,
+    "dk_id": NaN
   },
   "Kenneth Gainwell": {
     "id": "GainKe00",
@@ -20571,7 +20879,8 @@
       "mean": 8.333805248588524,
       "ceiling": 33.06759510247828
     },
-    "total_tds": 0.31981000000000004
+    "total_tds": 0.31981000000000004,
+    "dk_id": NaN
   },
   "Kaleb Johnson": {
     "id": "JohnKa01",
@@ -20642,7 +20951,8 @@
       "mean": 1.484815210660842,
       "ceiling": 19.793435581136492
     },
-    "total_tds": 0.08024
+    "total_tds": 0.08024,
+    "dk_id": NaN
   },
   "Jonnu Smith": {
     "id": "SmitJo02",
@@ -20713,7 +21023,8 @@
       "mean": 7.936012373235724,
       "ceiling": 31.957618119436294
     },
-    "total_tds": 0.20148
+    "total_tds": 0.20148,
+    "dk_id": NaN
   },
   "Pat Freiermuth": {
     "id": "FreiPa00",
@@ -20784,7 +21095,8 @@
       "mean": 7.022693411916204,
       "ceiling": 37.380138939479835
     },
-    "total_tds": 0.19994
+    "total_tds": 0.19994,
+    "dk_id": NaN
   },
   "Darnell Washington": {
     "id": "WashDa02",
@@ -20855,7 +21167,8 @@
       "mean": 1.0127466860464605,
       "ceiling": 5.548130151392909
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "DK Metcalf": {
     "id": "MetcDK00",
@@ -20926,7 +21239,8 @@
       "mean": 14.506436084474778,
       "ceiling": 51.50826538407384
     },
-    "total_tds": 0.5118
+    "total_tds": 0.5118,
+    "dk_id": NaN
   },
   "Calvin Austin III": {
     "id": "AustCa00",
@@ -20997,7 +21311,8 @@
       "mean": 10.81232717630578,
       "ceiling": 39.44120528413164
     },
-    "total_tds": 0.39301
+    "total_tds": 0.39301,
+    "dk_id": NaN
   },
   "Roman Wilson": {
     "id": "WilsRo02",
@@ -21068,7 +21383,8 @@
       "mean": 2.2189658914581476,
       "ceiling": 20.146117347988973
     },
-    "total_tds": 0.03519
+    "total_tds": 0.03519,
+    "dk_id": NaN
   },
   "Ben Skowronek": {
     "id": "SkowBe00",
@@ -21139,7 +21455,8 @@
       "mean": 1.2810205205633178,
       "ceiling": 18.205920195734656
     },
-    "total_tds": 0.03499
+    "total_tds": 0.03499,
+    "dk_id": NaN
   },
   "Scotty Miller": {
     "id": "MillSc01",
@@ -21210,7 +21527,8 @@
       "mean": 0.38779071460309533,
       "ceiling": 4.334216077713181
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": NaN
   },
   "Joe Flacco": {
     "id": "FlacJo00",
@@ -21281,7 +21599,8 @@
       "mean": 14.245720098132226,
       "ceiling": 46.3333113716793
     },
-    "total_tds": 0
+    "total_tds": 0,
+    "dk_id": 40142417
   },
   "Quinshon Judkins": {
     "id": "JudkQu00",
@@ -21352,7 +21671,8 @@
       "mean": 14.528025260379065,
       "ceiling": 48.32685334017375
     },
-    "total_tds": 0.55804
+    "total_tds": 0.55804,
+    "dk_id": 40142502
   },
   "Jerome Ford": {
     "id": "FordJe00",
@@ -21423,7 +21743,8 @@
       "mean": 5.140671115780668,
       "ceiling": 28.375706913666832
     },
-    "total_tds": 0.1484
+    "total_tds": 0.1484,
+    "dk_id": 40142534
   },
   "Dylan Sampson": {
     "id": "SampDy00",
@@ -21494,7 +21815,8 @@
       "mean": 3.7948836630736174,
       "ceiling": 27.144082275449463
     },
-    "total_tds": 0.14562
+    "total_tds": 0.14562,
+    "dk_id": 40142550
   },
   "David Njoku": {
     "id": "NjokDa00",
@@ -21565,7 +21887,8 @@
       "mean": 5.46686176517668,
       "ceiling": 28.606317815339064
     },
-    "total_tds": 0.11834
+    "total_tds": 0.11834,
+    "dk_id": 40143154
   },
   "Harold Fannin Jr.": {
     "id": "FannHa00",
@@ -21636,7 +21959,8 @@
       "mean": 9.402013928829628,
       "ceiling": 34.89396631580108
     },
-    "total_tds": 0.19426
+    "total_tds": 0.19426,
+    "dk_id": 40143156
   },
   "Jerry Jeudy": {
     "id": "JeudJe00",
@@ -21707,7 +22031,8 @@
       "mean": 14.123992825580812,
       "ceiling": 40.15775911435489
     },
-    "total_tds": 0.27429
+    "total_tds": 0.27429,
+    "dk_id": 40142780
   },
   "Cedric Tillman": {
     "id": "TillCe00",
@@ -21778,7 +22103,8 @@
       "mean": 9.258397148882453,
       "ceiling": 33.9148849214852
     },
-    "total_tds": 0.23029
+    "total_tds": 0.23029,
+    "dk_id": 40142806
   },
   "Isaiah Bond": {
     "id": "BondIs00",
@@ -21849,7 +22175,8 @@
       "mean": 4.976284614731314,
       "ceiling": 29.564031271053715
     },
-    "total_tds": 0.14827
+    "total_tds": 0.14827,
+    "dk_id": 40142884
   },
   "Jamari Thrash": {
     "id": "ThraJa01",
@@ -21920,7 +22247,8 @@
       "mean": 2.5218620141305172,
       "ceiling": 19.157881651554032
     },
-    "total_tds": 0.03424
+    "total_tds": 0.03424,
+    "dk_id": 40143078
   },
   "Cameron Ward": {
     "id": "WardCa00",
@@ -21991,7 +22319,8 @@
       "mean": 14.268526794466034,
       "ceiling": 46.863326788159185
     },
-    "total_tds": 0.13843
+    "total_tds": 0.13843,
+    "dk_id": 40142415
   },
   "Tony Pollard": {
     "id": "PollTo01",
@@ -22062,7 +22391,8 @@
       "mean": 14.657943572100109,
       "ceiling": 49.754793102158615
     },
-    "total_tds": 0.4807
+    "total_tds": 0.4807,
+    "dk_id": 40142500
   },
   "Julius Chestnut": {
     "id": "ChesJu00",
@@ -22133,7 +22463,8 @@
       "mean": 2.4604521296345014,
       "ceiling": 19.824914183109623
     },
-    "total_tds": 0.04981
+    "total_tds": 0.04981,
+    "dk_id": 40142664
   },
   "Chig Okonkwo": {
     "id": "OkonCh00",
@@ -22204,7 +22535,8 @@
       "mean": 9.43770593923183,
       "ceiling": 36.188671275770645
     },
-    "total_tds": 0.11815
+    "total_tds": 0.11815,
+    "dk_id": 40143160
   },
   "Gunnar Helm": {
     "id": "HelmGu00",
@@ -22275,7 +22607,8 @@
       "mean": 4.565676051151406,
       "ceiling": 23.716773864590618
     },
-    "total_tds": 0.12216
+    "total_tds": 0.12216,
+    "dk_id": 40143202
   },
   "Elic Ayomanor": {
     "id": "AyomEl00",
@@ -22346,7 +22679,8 @@
       "mean": 11.846031692550786,
       "ceiling": 47.17012977173753
     },
-    "total_tds": 0.35134
+    "total_tds": 0.35134,
+    "dk_id": 40142820
   },
   "Calvin Ridley": {
     "id": "RidlCa00",
@@ -22417,7 +22751,8 @@
       "mean": 11.7199391531432,
       "ceiling": 39.860597436090394
     },
-    "total_tds": 0.25951
+    "total_tds": 0.25951,
+    "dk_id": 40142782
   },
   "Chimere Dike": {
     "id": "DikeCh00",
@@ -22488,7 +22823,8 @@
       "mean": 4.500881949255135,
       "ceiling": 23.07656073462156
     },
-    "total_tds": 0.06
+    "total_tds": 0.06,
+    "dk_id": 40143042
   },
   "Tyler Lockett": {
     "id": "LockTy00",
@@ -22559,6 +22895,7 @@
       "mean": 3.8172738335164134,
       "ceiling": 22.107872464893727
     },
-    "total_tds": 0.03462
+    "total_tds": 0.03462,
+    "dk_id": 40142852
   }
 }
