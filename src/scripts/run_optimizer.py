@@ -8,6 +8,7 @@ import random
 import csv
 import re
 import html
+import math
 from pathlib import Path
 
 import pandas as pd
@@ -114,16 +115,14 @@ def main():
     if sims_xlsx.exists():
         sims = pd.read_excel(sims_xlsx)
 
-        # Normalize pool and sims names, teams, positions
-        df["name_norm"]        = df["name"].apply(normalize_name)
-        df["team_code_norm"]   = df["team"].astype(str).str.upper().str.strip()
-        df["pos_norm"]         = df["pos"].astype(str).str.upper().str.strip()
+        df["name_norm"]      = df["name"].apply(normalize_name)
+        df["team_code_norm"] = df["team"].astype(str).str.upper().str.strip()
+        df["pos_norm"]       = df["pos"].astype(str).str.upper().str.strip()
 
-        sims["name_norm"]      = sims["player"].apply(normalize_name)
-        sims["team_merge_norm"]= sims["team"].astype(str).str.upper().str.strip()
-        sims["pos_norm"]       = sims["pos"].astype(str).str.upper().str.strip()
+        sims["name_norm"]       = sims["player"].apply(normalize_name)
+        sims["team_merge_norm"] = sims["team"].astype(str).str.upper().str.strip()
+        sims["pos_norm"]        = sims["pos"].astype(str).str.upper().str.strip()
 
-        # Merge on normalized keys
         df = df.merge(
             sims[["name_norm", "team_merge_norm", "pos_norm", "dk_points_mean"]],
             left_on=["name_norm", "team_code_norm", "pos_norm"],
@@ -131,19 +130,18 @@ def main():
             how="left"
         )
 
-        # Patch projections where sim exists
         patched_mask = df["dk_points_mean"].fillna(0) > 0
         print(f"🔍 Rows with dk_points_mean>0 (to patch): {patched_mask.sum()}")
         df.loc[patched_mask, "proj_mean"] = df.loc[patched_mask, "dk_points_mean"]
 
     # 3) Identify & export true ghosts before dropping
     ghosts = df[(df["proj_mean"] == 0) & df["dk_points_mean"].isnull()]
-    ghosts_csv = PROJECT_ROOT / "src/output" / f"ghosts_removed_w{args.week}_y{args.year}.csv"
-    ghosts_csv.parent.mkdir(parents=True, exist_ok=True)
-    ghosts.to_csv(ghosts_csv, index=False)
-    print(f"🔍 Exported {len(ghosts)} ghost rows to {ghosts_csv}")
+    ghosts_dir = PROJECT_ROOT / "src" / "output" / "ghosts_removed"
+    ghosts_dir.mkdir(parents=True, exist_ok=True)
+    ghosts_file = ghosts_dir / f"ghosts_{args.year}_w{args.week}.csv"
+    ghosts.to_csv(ghosts_file, index=False)
+    print(f"🔍 Exported {len(ghosts)} ghost rows to {ghosts_file}")
 
-    # Drop ghosts and helper cols
     mask_keep = ~((df["proj_mean"] == 0) & df["dk_points_mean"].isnull())
     df = df[mask_keep].reset_index(drop=True)
     print(f"🔍 Pool size after removing ghosts: {len(df)}")
@@ -199,9 +197,11 @@ def main():
     df["implied_norm"]    = df["implied_team_total"] / df["implied_team_total"].max()
     df["game_total_norm"] = df["game_total"]         / df["game_total"].max()
 
-    # 8) Price flags
+    # 8) Price flags & salary-change % weighting
     pricing_file = PROJECT_ROOT / "src/output/salary" / f"fd_vs_dk_w{args.week}.csv"
     price_map = {}
+    salary_map = {}
+
     if pricing_file.exists():
         pricing = pd.read_csv(pricing_file)
         for _, row in pricing.iterrows():
@@ -212,24 +212,41 @@ def main():
             if row.get("DK_OVERPRICED", False):         w -= 0.40
             if row.get("DK_EXTREME_OVERPRICED", False): w -= 0.75
             price_map[dkid] = w
-    df["price_weight"] = df["dk_id"].map(lambda i: price_map.get(str(i), 0.0))
+
+            pct = row.get("dk_salary_percent_change", 0.0)
+            w2 = 0.0
+            if -5 <= pct < -3:     w2 += 0.30
+            elif -10 <= pct < -5:  w2 += 0.60
+            elif pct < -10:        w2 += 0.90
+            elif 3 <= pct < 5:     w2 -= 0.30
+            elif 5 <= pct < 10:    w2 -= 0.60
+            elif pct > 10:         w2 -= 0.90
+            salary_map[dkid] = w2
+
+    df["price_weight"]         = df["dk_id"].map(lambda i: price_map.get(str(i), 0.0))
+    df["salary_change_weight"] = df["dk_id"].map(lambda i: salary_map.get(str(i), 0.0))
+
+    # Soft weight for mid-tier players (≤$5,000)
+    df["mid50_weight"] = df["dk_salary"].apply(lambda s: 0.20 if s <= 5500 else 0.0)
+    # Soft boost for total salary usage (scaled 0–1 over $0–$50K)
+    df["salary_use_weight"] = df["dk_salary"] / SALARY_MAX
 
     # 9) Structure & exposures
-    struct         = json.loads((PROJECT_ROOT / "src/data/lineup_structure.json").read_text())
-    stack_usage    = struct["stack_usage"]
+    struct        = json.loads((PROJECT_ROOT / "src/data/lineup_structure.json").read_text())
+    stack_usage   = struct["stack_usage"]
     stack_usage["naked_qb_rate"] = 0.07
-    bringback_use  = struct["bringback_usage"]
-    flex_dist      = struct["flex_position_distribution"]
+    bringback_use = struct["bringback_usage"]
+    flex_dist     = struct["flex_position_distribution"]
 
     exposures   = {str(int(dkid)): 0 for dkid in df["dk_id"]}
     all_lineups = []
 
     # 10) Generate lineups
     solver = PULP_CBC_CMD(msg=False, timeLimit=30)
-    prior_lineups = []
-    trial = 0
-    attempts = 0
-    max_attempts = args.count * 10
+    prior_lineups       = []
+    trial               = 0
+    attempts            = 0
+    max_attempts        = args.count * 10
 
     schedule = [
         (4, SALARY_MIN),    (4, SALARY_MIN - 200),
@@ -240,30 +257,59 @@ def main():
         (8, SALARY_MIN),    (8, SALARY_MIN - 200),(8, SALARY_MIN - 400),
         (9, SALARY_MIN),    (9, SALARY_MIN - 200),(9, SALARY_MIN - 400),
     ]
-    schedule_index = 0
+    schedule_index            = 0
     current_cap, salary_floor_current = schedule[schedule_index]
-    failures_since_toggle = 0
-    cap_counts = {}
-    salary_floor_counts = {}
+    failures_since_toggle     = 0
+    cap_counts                = {}
+    salary_floor_counts       = {}
 
     while trial < args.count and attempts < max_attempts:
         attempts += 1
         if attempts % 10 == 0:
             print(f"🔄 Attempt {attempts}  |  Valid lineups so far: {trial}")
 
-        model = LpProblem("DKLineup", LpMaximize)
+        model    = LpProblem("DKLineup", LpMaximize)
         vars_map = {
             int(r.dk_id): LpVariable(f"x_{r.dk_id}", cat="Binary")
             for _, r in df.iterrows()
         }
 
-        # a) exposure caps
+               # a) exposure caps (tiered to curb bust correlation)
         for dkid_str, count in exposures.items():
             dkid = int(dkid_str)
             own  = df.loc[df["dk_id"] == dkid, "proj_own"].iloc[0]
-            max_allowed = 5 if own > 0.20 else 7
+            if own > 0.20:
+                max_allowed = 5
+            elif own > 0.10:
+                max_allowed = 7
+            else:
+                max_allowed = 13
             if count >= max_allowed:
                 model += vars_map[dkid] == 0, f"exp_cap_{dkid}_{attempts}"
+
+        # dynamic minimum exposures for cheap players
+        cheap35   = [int(r.dk_id) for _, r in df.iterrows() if r.dk_salary <= 3500]
+        cheap30   = [int(r.dk_id) for _, r in df.iterrows() if r.dk_salary <= 3000]
+        count35   = sum(1 for lu in prior_lineups if any(pid in cheap35 for pid in lu))
+        count30   = sum(1 for lu in prior_lineups if any(pid in cheap30 for pid in lu))
+        remaining = args.count - len(prior_lineups)
+        target35  = math.ceil(0.20 * args.count)
+        target30  = math.ceil(0.08 * args.count)
+        need35    = max(0, target35 - count35)
+        need30    = max(0, target30 - count30)
+
+        if remaining > 0:
+            if need35 >= remaining:
+                model += lpSum(
+                    vars_map[i] for i in vars_map
+                    if i in cheap35
+                ) >= 1, f"min_3500_{attempts}"
+
+            if need30 >= remaining:
+                model += lpSum(
+                    vars_map[i] for i in vars_map
+                    if i in cheap30
+                ) >= 1, f"min_3000_{attempts}"
 
         # b) stack vs naked
         if random.random() >= stack_usage["naked_qb_rate"]:
@@ -271,8 +317,8 @@ def main():
                 list(stack_usage["stack_depths"].keys()),
                 list(stack_usage["stack_depths"].values()), k=1
             )[0]
-            depth_map = {"single_stack":2, "double_stack":3, "triple+_stack":4}
-            n_stack = depth_map[choice]
+            depth_map    = {"single_stack": 2, "double_stack": 3, "triple+_stack": 4}
+            n_stack      = depth_map[choice]
             team_to_stack = random.choice(df["team_code"].unique())
 
             model += lpSum(
@@ -321,7 +367,7 @@ def main():
 
         # c) flex distribution
         flex_pick = random.choices(
-            ["WR","RB","TE"],
+            ["WR", "RB", "TE"],
             [flex_dist["wr"], flex_dist["rb"], flex_dist["te"]], k=1
         )[0]
         if flex_pick == "WR":
@@ -344,7 +390,7 @@ def main():
         for idx, prev_ids in enumerate(prior_lineups):
             model += lpSum(vars_map[i] for i in prev_ids) <= current_cap, f"unique_{idx}_{attempts}"
 
-        # d) objective & core constraints
+                      # d) objective & core constraints
         model += lpSum(
             vars_map[i] * (
                   df.loc[df["dk_id"] == i, "score_adj"].iloc[0]
@@ -354,42 +400,53 @@ def main():
                 + 1.00 * df.loc[df["dk_id"] == i, "implied_norm"].iloc[0]
                 + 0.75 * df.loc[df["dk_id"] == i, "game_total_norm"].iloc[0]
                 + df.loc[df["dk_id"] == i, "price_weight"].iloc[0]
+                + df.loc[df["dk_id"] == i, "salary_change_weight"].iloc[0]
+                + df.loc[df["dk_id"] == i, "mid50_weight"].iloc[0]        # soft bias for ≤$5K
+                + df.loc[df["dk_id"] == i, "salary_use_weight"].iloc[0]   # soft bonus for high salary
             )
             for i in vars_map
         ), "TotalCombinedScore"
+
         model += lpSum(
             vars_map[i] * df.loc[df["dk_id"] == i, "dk_salary"].iloc[0]
             for i in vars_map
         ) <= SALARY_MAX, "SalaryCap"
+
         model += lpSum(
             vars_map[i] * df.loc[df["dk_id"] == i, "dk_salary"].iloc[0]
             for i in vars_map
         ) >= salary_floor_current, "SalaryFloor"
+
         model += lpSum(
             vars_map[i] for i in vars_map
             if df.loc[df["dk_id"] == i, "pos"].iloc[0] == "QB"
         ) == 1, "QB"
+
         model += lpSum(
             vars_map[i] for i in vars_map
             if df.loc[df["dk_id"] == i, "pos"].iloc[0] == "DST"
         ) == 1, "DST"
+
         model += lpSum(
             vars_map[i] for i in vars_map
             if df.loc[df["dk_id"] == i, "pos"].iloc[0] == "RB"
         ) >= 2, "MinRB"
+
         model += lpSum(
             vars_map[i] for i in vars_map
             if df.loc[df["dk_id"] == i, "pos"].iloc[0] == "WR"
         ) >= 3, "MinWR"
+
         model += lpSum(
             vars_map[i] for i in vars_map
             if df.loc[df["dk_id"] == i, "pos"].iloc[0] == "TE"
         ) >= 1, "MinTE"
+
         model += lpSum(vars_map.values()) == 9, "TotalPlayers"
 
         status = model.solve(solver)
         if status != 1:
-            # only count *failed* solves toward cycling
+            # only count failed solves toward cycling
             failures_since_toggle += 1
             if failures_since_toggle >= 70:
                 schedule_index = min(schedule_index + 1, len(schedule) - 1)
@@ -415,7 +472,7 @@ def main():
         for dkid in selected:
             exposures[str(dkid)] += 1
 
-        # ── BUILD ORDERED LINEUP ───────────────────────────────────────────────
+        # ── BUILD ORDERED LINEUP ────────────────────────────────────────────────────────────────────────
         lineup   = df[df["dk_id"].isin(selected)].copy()
         qb_row   = lineup[lineup.pos == "QB"]
         rb_rows  = lineup[lineup.pos == "RB"].head(2)
